@@ -3,7 +3,6 @@
 namespace Longman\TelegramBot\Commands\SystemCommands;
 
 use OxMohsen\TgBot\Messages;
-use Longman\TelegramBot\Conversation;
 use Longman\TelegramBot\Commands\SystemCommand;
 use Longman\TelegramBot\Entities\ServerResponse;
 
@@ -30,8 +29,7 @@ class GenericmessageCommand extends SystemCommand
      * @return ServerResponse
      */
     public function execute(): ServerResponse
-    {
-       
+    {       
         $web_app_data = $this->getMessage()->getWebAppData();
         if ($web_app_data) {
             return $this->replyToChat(
