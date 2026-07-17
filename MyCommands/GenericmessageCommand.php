@@ -29,12 +29,12 @@ class GenericmessageCommand extends SystemCommand
      * @return ServerResponse
      */
     public function execute(): ServerResponse
-    {
-        $web_app_data = $this->getMessage()->getWebAppData();
+    {        
         $this->replyToChat(
                 'procesando mensaje generico',
                 ['parse_mode' => 'Markdown']
             );
+        $web_app_data = $this->getMessage()->getWebAppData();
         if ($web_app_data) {
             return $this->replyToChat(
                 sprintf(Messages::WEBAPP_DATA_MESSAGE, $web_app_data->getData()),
