@@ -29,7 +29,7 @@ class GenericmessageCommand extends SystemCommand
      * @return ServerResponse
      */
     public function execute(): ServerResponse
-    {       
+    {
         $web_app_data = $this->getMessage()->getWebAppData();
         if ($web_app_data) {
             return $this->replyToChat(
@@ -37,10 +37,6 @@ class GenericmessageCommand extends SystemCommand
                 ['parse_mode' => 'Markdown']
             );
         }
-         $message = $this->getMessage();        
-        $message_text = $message->getText(true);
-        if ($message_text=='sarasa')            
-            $this->replyToChat('escribieron sarasa');            
 
         return $this->telegram->executeCommand('start');
     }

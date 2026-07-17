@@ -49,8 +49,8 @@ try {
 } catch (TelegramException $e) {
     TelegramLog::error($e);
     // Uncomment this to output any errors (ONLY FOR DEVELOPMENT!)
-     echo $e;
+    // echo $e;
 } catch (TelegramLogException $e) {
     // Uncomment this to output log initialization errors (ONLY FOR DEVELOPMENT!)
-     echo $e;
+    // echo $e;
 }
