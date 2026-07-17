@@ -1,3 +1,7 @@
 vendor/
 .vscode/
+<<<<<<< HEAD
 #Config.php
+=======
+Config.php
+>>>>>>> upstream/main

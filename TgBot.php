@@ -53,4 +53,8 @@ try {
 } catch (TelegramLogException $e) {
     // Uncomment this to output log initialization errors (ONLY FOR DEVELOPMENT!)
     // echo $e;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> upstream/main

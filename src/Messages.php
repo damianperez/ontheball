@@ -10,4 +10,8 @@ class Messages
         'https://github.com/OxMohsen/pass-generator-webbot';
     public const WEBAPP_DATA_MESSAGE  = '🔰 Your Generated Password is: `%s`';
     public const WEBAPP_KEYBOARD_TEXT = '🚀 Generate Password 🚀';
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> upstream/main

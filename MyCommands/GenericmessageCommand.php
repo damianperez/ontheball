@@ -40,4 +40,8 @@ class GenericmessageCommand extends SystemCommand
 
         return $this->telegram->executeCommand('start');
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> upstream/main
