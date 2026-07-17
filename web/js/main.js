@@ -156,5 +156,5 @@ Telegram.WebApp.onEvent('mainButtonClicked', function () {
   if (password != "CLICK GENERATE" || !password) {
     Telegram.WebApp.sendData(password);
   }
-  Telegram.WebApp.close();
+//  Telegram.WebApp.close();
 });
