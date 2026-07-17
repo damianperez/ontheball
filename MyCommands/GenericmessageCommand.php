@@ -34,7 +34,7 @@ class GenericmessageCommand extends SystemCommand
         $message = $this->getMessage();        
         $message_text = $message->getText(true);
         if ($message_text=='sarasa')            
-            $this->debug_a_admins('Respuesta in the ball',json_encode($this->replyToChat('escribieron sarasa')));            
+            $this->replyToChat('escribieron sarasa');            
 
         $web_app_data = $this->getMessage()->getWebAppData();
         if ($web_app_data) {
