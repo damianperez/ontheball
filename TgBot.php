@@ -1,5 +1,4 @@
 <?php
-
 use OxMohsen\TgBot\Config;
 use Longman\TelegramBot\TelegramLog;
 use TelegramBot\TelegramBotManager\BotManager;
@@ -53,8 +52,4 @@ try {
 } catch (TelegramLogException $e) {
     // Uncomment this to output log initialization errors (ONLY FOR DEVELOPMENT!)
     // echo $e;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> upstream/main
