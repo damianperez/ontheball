@@ -380,13 +380,10 @@ async function sendPOST() {
 
     printPayload(payload);
 
-    const r = await request(
-
-        "guardar.php",
-
-        payload
-
-    );
+   const r = await request(
+    "guardar.php",
+    payload
+    );  
 
     if (!r)
         return;
