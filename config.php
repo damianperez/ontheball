@@ -54,6 +54,17 @@ define('LOG_PATH', ROOT_PATH . '/logs');
 
 define('DATA_PATH', ROOT_PATH . '/data');
 
+
+
+/*
+|--------------------------------------------------------------------------
+| Rutas del sistema
+|--------------------------------------------------------------------------
+*/
+
+define(    "BASE_DIR",    __DIR__);
+define(    "DATA_DIR",    BASE_DIR . "/data");
+define(    "LOG_DIR",    BASE_DIR . "/logs");
 /*
 |--------------------------------------------------------------------------
 | Archivos
