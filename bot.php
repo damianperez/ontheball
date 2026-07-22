@@ -173,7 +173,7 @@ try {
                             [
                                 "text"=>"🚀 Abrir Studio",
                                 "web_app"=>[
-                                    "url"=>"https://TU_DOMINIO.com/index.php"
+                                    "url"=>"https://bots.perezcompany.com.ar/ontheball/index.php"
                                 ]
                             ]
                         ]
