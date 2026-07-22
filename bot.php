@@ -161,15 +161,26 @@ try {
         if($text=="/start"){
 
 
-            TelegramClient::sendMessage(
 
-                $chat_id,
-
-                "🟢 Bot conectado correctamente\n\n".
-                "WebApp Debug Studio V1.0"
-
-            );
-
+        TelegramClient::sendMessage(
+            $chat_id,
+            "🟢 Bot conectado correctamente\n\n".
+                "WebApp Debug Studio V1.0",
+            [
+                "reply_markup"=>json_encode([
+                    "inline_keyboard"=>[
+                        [
+                            [
+                                "text"=>"🚀 Abrir Studio",
+                                "web_app"=>[
+                                    "url"=>"https://TU_DOMINIO.com/index.php"
+                                ]
+                            ]
+                        ]
+                    ]
+                ])
+            ]
+        );
 
             State::event(
 
