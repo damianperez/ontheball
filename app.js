@@ -79,6 +79,8 @@ function initTelegram() {
 
     APP.tg.ready();
 
+    registrarAperturaWebApp();
+
     APP.tg.expand();
 
     APP.user = APP.tg.initDataUnsafe.user || {};
@@ -93,6 +95,80 @@ function initTelegram() {
 
 }
 
+async function registrarAperturaWebApp(){
+
+    try {
+
+
+        const tg =
+            window.Telegram.WebApp;
+
+
+        const user =
+            tg.initDataUnsafe?.user || {};
+
+
+
+        const payload = {
+
+
+            evento:"WEBAPP_OPEN",
+
+
+            telegram:{
+
+                id:user.id || null,
+
+                username:user.username || null,
+
+                first_name:user.first_name || null
+
+            },
+
+
+            app:{
+
+                platform:
+                    tg.platform || null,
+
+                version:
+                    tg.version || null
+
+            }
+
+
+        };
+
+
+
+        await request(
+
+            "guardar.php",
+
+            payload
+
+        );
+
+
+
+        UI.log(
+            "WEBAPP_OPEN registrado"
+        );
+
+
+    }
+    catch(e){
+
+
+        UI.error(
+            "Error WEBAPP_OPEN: "
+            + e.message
+        );
+
+
+    }
+
+}
 /* ========================================================== */
 
 function debugTelegram() {

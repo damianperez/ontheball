@@ -57,8 +57,9 @@ try {
     );
 
 
+    $tipo = $data["evento"] ?? "POST";
     State::event(
-        "POST",
+        $tipo,
         $data
     );
 
