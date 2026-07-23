@@ -140,15 +140,10 @@ async function registrarAperturaWebApp(){
         };
 
 
+    const r = await request("guardar.php", payload);
 
-        await request(
-
-            "guardar.php",
-
-            payload
-
-        );
-
+    UI.response(r);       
+        
 
 
         UI.log(

@@ -141,6 +141,29 @@ class UI {
         JSON.stringify(obj, null, 4);
 
 }
+static response(r) {
+
+    if (r.ok) {
+
+        UI.success(
+            r.data?.message ?? "Operación exitosa"
+        );
+
+    } else {
+
+        UI.error(
+            r.data?.error ?? "Error desconocido"
+        );
+
+    }
+
+    if (Array.isArray(r.debug)) {
+
+        r.debug.forEach(msg => UI.log(msg));
+
+    }
+
+}
     /* ============================================= */
 
     static showTelegram(tg) {
@@ -264,17 +287,33 @@ class UI {
 
     /* ============================================= */
 
-    static success(msg) {
+     static success(message) {
 
-        this.log("✔ " + msg);
+        const el = document.getElementById("respuesta");
+
+        if (!el) return;
+
+        el.innerHTML = `
+            <div class="alert success">
+                <strong>✅ OK</strong><br>
+                ${message}
+            </div>
+        `;
 
     }
 
-    /* ============================================= */
+    static error(message) {
 
-    static error(msg) {
+        const el = document.getElementById("respuesta");
 
-        this.log("✖ " + msg);
+        if (!el) return;
+
+        el.innerHTML = `
+            <div class="alert error">
+                <strong>❌ Error</strong><br>
+                ${message}
+            </div>
+        `;
 
     }
 
