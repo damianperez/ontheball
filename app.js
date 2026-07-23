@@ -50,7 +50,9 @@ window.addEventListener("load", initApplication);
 function initApplication() {
 
     UI.init();
-    console.log("btnClose:", this.el.btnClose);
+
+    console.log("btnClose:", UI.el.btnClose);
+
     UI.separator();
 
     UI.success("Aplicación iniciada");
