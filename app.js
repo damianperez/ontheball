@@ -21,7 +21,7 @@ const APP = {
 
     polling: null,
 
-    pollingSeconds: 15, // cada 15 segundos decia 5 antes
+    pollingSeconds: 5, // cada 15 segundos decia 5 antes
 
     lastResponse: null,
 
@@ -689,7 +689,7 @@ function startPolling() {
 
         consultarEstado,
 
-        APP.pollingSeconds * 1000
+        APP.pollingSeconds * 5000   //decia 1000 antes
 
     );
 
