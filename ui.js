@@ -136,41 +136,54 @@ class UI {
 
     static showHealth(data) {
 
-        let html = "";
+    let html = `
+        <div class="health">
+            <h3>❤️ Health Check</h3>
+            <table class="health-table">
+    `;
 
-        Object.entries(data.checks).forEach(([key, value]) => {
-
-            html += `
-                <tr>
-                    <td>${key}</td>
-                    <td>${value.ok ? "🟢 OK" : "🔴 ERROR"}</td>
-                </tr>
-            `;
-
-        });
+    Object.entries(data.checks).forEach(([k, v]) => {
 
         html += `
             <tr>
-                <td><strong>Tiempo</strong></td>
-                <td>${data.response_ms} ms</td>
+                <td>${k}</td>
+                <td>${v.ok ? "🟢 OK" : "🔴 ERROR"}</td>
             </tr>
         `;
 
-        this.el.respuesta.innerHTML = `
-            <h3>❤️ Health Check</h3>
+    });
 
-            <table class="health-table">
-                ${html}
+    html += `
             </table>
-        `;
 
-    }
+            <hr>
+
+            <b>Tiempo:</b> ${data.response_ms} ms<br>
+            <b>Servidor:</b> ${data.server_time}
+
+        </div>
+    `;
+
+    this.el.respuesta.innerHTML = html;
+
+}
     /* ============================================= */
 
     static showResponse(obj){
 
     this.el.respuesta.value =
         JSON.stringify(obj, null, 4);
+
+}
+static showJson(obj) {
+
+    this.el.respuesta.value =
+        JSON.stringify(obj, null, 4);
+
+}
+static showHTML(html) {
+
+    this.el.respuesta.innerHTML = html;
 
 }
 static response(r) {

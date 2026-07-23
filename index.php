@@ -171,11 +171,7 @@ rows="5"></textarea>
 
 <h2>Respuesta</h2>
 
-<textarea
-    id="respuesta"
-    readonly
-    rows="18">
-</textarea>
+<div id="respuesta" class="respuesta-panel"></div>
 
 </section>
 <section class="panel">
