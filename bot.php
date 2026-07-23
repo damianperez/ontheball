@@ -8,26 +8,19 @@
  * Webhook receptor Telegram
  * ==========================================================
  */
-
 declare(strict_types=1);
-
 
 require_once "config.php";
 require_once "logger.php";
 require_once "state.php";
 require_once "telegram_client.php";
 
-
 $debug=[];
-
 
 try {
 
-
     $start =
         Logger::timerStart();
-
-
 
     /*
     |--------------------------------------------------------------------------
@@ -35,12 +28,10 @@ try {
     |--------------------------------------------------------------------------
     */
 
-
     $raw =
         file_get_contents(
             "php://input"
         );
-
 file_put_contents(
     "logs/raw_update.log",
     date("Y-m-d H:i:s")."\n".
@@ -49,20 +40,12 @@ file_put_contents(
     FILE_APPEND
 );
     Logger::json(
-
         "BOT UPDATE RAW",
-
         $raw,
-
         BOT_LOG
-
     );
 
-
-
     $update =  json_decode( $raw, true );
-
-
 
 
     if(!$update){
@@ -70,23 +53,19 @@ file_put_contents(
             "Update inválido"
         );
     }
-
     /*
 |--------------------------------------------------------------------------
 | Telegram WebApp sendData
 |--------------------------------------------------------------------------
 */
-
 if (
     isset(
         $update["message"]["web_app_data"]
     )
 ) {
 
-
     $raw =
         $update["message"]["web_app_data"]["data"];
-
 
     $data =
         json_decode(
@@ -94,74 +73,44 @@ if (
             true
         );
 
-
     if(!$data){
-
         $data = [
             "raw"=>$raw
         ];
-
     }
-
-
 
     State::load();
 
-
     State::event(
-
         "SEND_DATA",
-
         [
-
             "chat_id" =>
                 $update["message"]["chat"]["id"],
 
-
             "payload" =>
                 $data
-
         ]
-
     );
-
 
     State::save();
 
-
-
     Logger::json(
-
         "SEND_DATA recibido",
-
         $data,
-
         BOT_LOG
-
     );
-
-
 
     /*
     Respuesta opcional al usuario
     */
-
     TelegramClient::sendMessage(
-
         $update["message"]["chat"]["id"],
-
         "✅ SendData recibido correctamente"
-
     );
-
 
 }
 
-
-
     $debug[]="Update recibido";
-
-
 
     /*
     |--------------------------------------------------------------------------
@@ -169,31 +118,19 @@ if (
     |--------------------------------------------------------------------------
     */
 
-
     State::load();
 
-
     State::set(
-
         "last_update",
-
         $update
-
     );
-
 
     State::event(
-
         "BOT_UPDATE",
-
         $update
-
     );
 
-
     State::save();
-
-
 
     /*
     |--------------------------------------------------------------------------
@@ -202,10 +139,8 @@ if (
     */
     if(isset($update["message"]["web_app_data"])) {
 
-
         $rawData =
             $update["message"]["web_app_data"]["data"];
-
 
         $sendData =
             json_decode(
@@ -213,72 +148,41 @@ if (
                 true
             );
 
-
-
         State::load();
 
-
         State::event(
-
             "SEND_DATA",
-
             [
-
                 "data"=>$sendData
-
             ]
-
         );
-
 
         State::save();
 
-
-
         Logger::json(
-
             "SEND_DATA recibido",
-
             $sendData,
-
             BOT_LOG
-
         );
-
 
     }
 
-
-
     if(isset($update["message"])){
-
 
         $message =
             $update["message"];
 
-
-
         $chat_id =
             $message["chat"]["id"];
-
-
 
         $text =
             $message["text"] ?? "";
 
-
-
         Logger::info(
-
             "Mensaje BOT",
-
             $message,
-
             BOT_LOG
-
         );
-
-
 
         /*
         |--------------------------------------------------------------------------
@@ -286,9 +190,7 @@ if (
         |--------------------------------------------------------------------------
         */
 
-
         if($text=="/start"){
-
 $keyboard = [
     "keyboard" => [
         [
@@ -303,7 +205,6 @@ $keyboard = [
     "resize_keyboard" => true
 ];
 
-
 TelegramClient::sendMessage(
     $chat_id,
     "Abrir Debug Studio",
@@ -312,55 +213,33 @@ TelegramClient::sendMessage(
             json_encode($keyboard)
     ]
 );
-
         
-
             State::event(
-
                 "BOT_START",
-
                 [
-
                     "chat_id"=>$chat_id
-
                 ]
-
             );
-
 
             State::save();
 
-
         }
-
 
         else {
 
-
             State::event(
-
                 "BOT_MESSAGE",
-
                 [
-
                     "chat_id"=>$chat_id,
-
                     "text"=>$text
-
                 ]
-
             );
-
 
             State::save();
 
-
         }
 
-
     }
-
-
 
     /*
     |--------------------------------------------------------------------------
@@ -368,59 +247,35 @@ TelegramClient::sendMessage(
     |--------------------------------------------------------------------------
     */
 
-
     $ms =
         Logger::timerEnd(
             $start
         );
 
-
     $debug[]=
         "Tiempo ".$ms." ms";
 
-
-
     jsonResponse(
-
         true,
-
         [
-
             "received"=>true,
-
             "elapsed_ms"=>$ms
-
         ],
-
         $debug
-
     );
-
-
 
 }
 catch(Throwable $e){
 
-
     Logger::exception($e);
 
-
     jsonResponse(
-
         false,
-
         [
-
             "error"=>
-
             $e->getMessage()
-
         ],
-
         $debug,
-
         500
-
     );
-
 }
