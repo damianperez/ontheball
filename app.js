@@ -102,10 +102,12 @@ async function healthCheck() {
 
     const r = await request("health.php");
 
-    UI.response(r);
-
     if (!r.ok) {
+
+        UI.error(r.data?.error ?? "Error");
+
         return;
+
     }
 
     UI.showHealth(r.data);
