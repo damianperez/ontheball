@@ -14,7 +14,7 @@ class UI {
     /* ============================================= */
 
     static init() {
-
+        console.log("=== UI.init() ===");
         const ids = [
 
             "tg_id",
