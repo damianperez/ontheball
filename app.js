@@ -94,7 +94,25 @@ function initTelegram() {
     debugTelegram();
 
 }
+async function closeWebApp() {
 
+    try {
+
+        await request("guardar.php", {
+
+            evento: "WEBAPP_CLOSE"
+
+        });
+
+    } catch (e) {
+
+        UI.log("No se pudo registrar WEBAPP_CLOSE.");
+
+    }
+
+    Telegram.WebApp.close();
+
+}
 async function registrarAperturaWebApp(){
 
     try {
@@ -165,23 +183,7 @@ async function registrarAperturaWebApp(){
 
 }
 /* ========================================================== */
-function closeWebApp() {
 
-    UI.log("Cerrando WebApp...");
-
-    const tg = window.Telegram?.WebApp;
-
-    if (!tg) {
-
-        UI.error("Telegram.WebApp no disponible.");
-
-        return;
-
-    }
-
-    tg.close();
-
-}
 function debugTelegram() {
 
     UI.separator();
