@@ -214,27 +214,31 @@ file_put_contents(
 
         if($text=="/start"){
 
-
-
-        TelegramClient::sendMessage(
-            $chat_id,
-            "🟢 Bot conectado correctamente\n\n".
-                "WebApp Debug Studio V1.0",
+$keyboard = [
+    "keyboard" => [
+        [
             [
-                "reply_markup"=>json_encode([
-                    "inline_keyboard"=>[
-                        [
-                            [
-                                "text"=>"🚀 Abrir Studio",
-                                "web_app"=>[
-                                    "url"=>"https://bots.perezcompany.com.ar/ontheball/index.php"
-                                ]
-                            ]
-                        ]
-                    ]
-                ])
+                "text" => "🚀 Abrir Studio",
+                "web_app" => [
+                    "url" => WEBAPP_URL
+                ]
             ]
-        );
+        ]
+    ],
+    "resize_keyboard" => true
+];
+
+
+TelegramClient::sendMessage(
+    $chat_id,
+    "Abrir Debug Studio",
+    [
+        "reply_markup" =>
+            json_encode($keyboard)
+    ]
+);
+
+        
 
             State::event(
 
