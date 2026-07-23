@@ -51,16 +51,37 @@ try {
     State::save();
 
     jsonResponse(
-        true,
-        [
-            "message"=>
-            "POST recibido correctamente"
-        ],
-        [
-            "POST guardado",
-            "Evento creado"
-        ]
-    );
+
+            true,
+
+            [
+
+                "message"   => "Datos guardados correctamente",
+
+                "event"     => "POST",
+
+                "timestamp" => date("Y-m-d H:i:s"),
+
+                "state" => [
+
+                    "events" => count(
+                        State::get("events", [])
+                    )
+
+                ]
+
+            ],
+
+            [
+
+                "JSON recibido",
+                "Estado actualizado",
+                "Evento registrado",
+                "Archivo guardado"
+
+            ]
+
+        );
 
 }
 catch(Throwable $e){
