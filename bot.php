@@ -41,7 +41,13 @@ try {
             "php://input"
         );
 
-
+file_put_contents(
+    "logs/raw_update.log",
+    date("Y-m-d H:i:s")."\n".
+    file_get_contents("php://input").
+    "\n\n",
+    FILE_APPEND
+);
     Logger::json(
 
         "BOT UPDATE RAW",
