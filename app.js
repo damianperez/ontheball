@@ -50,7 +50,7 @@ window.addEventListener("load", initApplication);
 function initApplication() {
 
     UI.init();
-
+    console.log("btnClose:", this.el.btnClose);
     UI.separator();
 
     UI.success("Aplicación iniciada");
@@ -237,7 +237,7 @@ function debugTelegram() {
 
 function installEvents() {
 
-    UI.el.btnSendData.onclick = sendDataNative;
+    
 
     UI.el.btnPOST.onclick = sendPOST;
 
@@ -250,6 +250,7 @@ function installEvents() {
     UI.el.btnPing.onclick = pingServidor;
     UI.el.btnVerify.onclick = verifySistema;
     UI.el.btnSendData.onclick =  sendDataTelegram;
+    //UI.el.btnSendData.onclick = sendDataNative;
     UI.el.btnClose.onclick = closeWebApp;
 
     UI.success("Eventos registrados");
