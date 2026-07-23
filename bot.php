@@ -119,6 +119,54 @@ try {
     | Procesar mensaje
     |--------------------------------------------------------------------------
     */
+    if(isset($update["message"]["web_app_data"])) {
+
+
+        $rawData =
+            $update["message"]["web_app_data"]["data"];
+
+
+        $sendData =
+            json_decode(
+                $rawData,
+                true
+            );
+
+
+
+        State::load();
+
+
+        State::event(
+
+            "SEND_DATA",
+
+            [
+
+                "data"=>$sendData
+
+            ]
+
+        );
+
+
+        State::save();
+
+
+
+        Logger::json(
+
+            "SEND_DATA recibido",
+
+            $sendData,
+
+            BOT_LOG
+
+        );
+
+
+    }
+
 
 
     if(isset($update["message"])){

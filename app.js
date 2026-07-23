@@ -220,12 +220,42 @@ function installEvents() {
 
     UI.el.btnPing.onclick = pingServidor;
     UI.el.btnVerify.onclick = verifySistema;
+    UI.el.btnSendData.onclick =  sendDataTelegram;
 
     UI.success("Eventos registrados");
 
 }
 
 /* ========================================================== */
+async function sendDataTelegram(){
+
+    const tg =
+        window.Telegram.WebApp;
+
+
+    const payload = {
+
+        evento:"SEND_DATA",
+
+        time:
+            new Date().toISOString(),
+
+        message:
+            "Hola desde Mini App"
+
+    };
+
+
+    UI.log(
+        "Enviando sendData..."
+    );
+
+
+    tg.sendData(
+        JSON.stringify(payload)
+    );
+
+}
 async function verifySistema(){
 
     UI.separator();

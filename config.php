@@ -17,7 +17,10 @@ date_default_timezone_set('America/Argentina/Buenos_Aires');
 | Telegram
 |--------------------------------------------------------------------------
 */
-
+define(
+    "APP_VERSION",
+    "1.0.0"
+);
 define('BOT_TOKEN', '1618069377:AAGPFW-KGu-vCN0xUudrK6FRqWdD3AizrSc');
 
 define(
