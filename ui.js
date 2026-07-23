@@ -171,20 +171,19 @@ class UI {
 
 static showResponse(data, type = "auto") {
 
-    if (!this.el.respuesta) {
-        return;
-    }
+    const el = this.el.respuesta;
 
-    // Detección automática
+    if (!el) return;
+
+    const isTextarea =
+        el.tagName === "TEXTAREA";
+
     if (type === "auto") {
 
         if (typeof data === "string") {
 
-            const html = data.trim();
-
             if (
-                html.startsWith("<") &&
-                html.endsWith(">")
+                data.trim().startsWith("<")
             ) {
                 type = "html";
             } else {
@@ -199,26 +198,39 @@ static showResponse(data, type = "auto") {
 
     }
 
+    if (isTextarea) {
+
+        // Un textarea nunca puede mostrar HTML
+
+        if (type === "json") {
+
+            el.value =
+                JSON.stringify(data, null, 4);
+
+        } else {
+
+            el.value = data;
+
+        }
+
+        return;
+
+    }
+
+    // Es un DIV
+
     switch (type) {
 
         case "html":
-
-            this.el.respuesta.innerHTML = data;
-            break;
-
-        case "text":
-
-            this.el.respuesta.textContent = data;
+            el.innerHTML = data;
             break;
 
         case "json":
-
-        default:
-
-            this.el.respuesta.textContent =
+            el.textContent =
                 JSON.stringify(data, null, 4);
             break;
-
+        default:
+            el.textContent = data;
     }
 
 }
