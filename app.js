@@ -96,22 +96,19 @@ function initTelegram() {
     debugTelegram();
 
 }
-async function pingServidor() {
+async function healthCheck() {
 
-    UI.log("Enviando ping...");
+    UI.log("Ejecutando Health Check...");
 
-    const r = await request("ping.php");
+    const r = await request("health.php");
 
     UI.response(r);
 
-    if (r.ok) {
-
-        UI.log("Servidor: " + r.data.server_time);
-        UI.log("PHP: " + r.data.php);
-        UI.log("Versión: " + r.data.version);
-        UI.log("Tiempo: " + r.data.response_ms + " ms");
-
+    if (!r.ok) {
+        return;
     }
+
+    UI.showHealth(r.data);
 
 }
 async function closeWebApp() {
@@ -267,7 +264,7 @@ function installEvents() {
 
     UI.el.btnClear.onclick = clearDebug;
 
-    UI.el.btnPing.onclick = pingServidor;
+    UI.el.btnHealth.onclick = healthCheck;
     UI.el.btnVerify.onclick = verifySistema;
     UI.el.btnSendData.onclick =  sendDataTelegram;
     //UI.el.btnSendData.onclick = sendDataNative;

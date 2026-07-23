@@ -155,8 +155,8 @@ rows="5"></textarea>
 <button id="btnClear">Limpiar</button>
 <button id="btnPing">Ping</button>
 <button id="btnVerify">Verify</button>
-<button id="btnClose" class="btn btn-danger">
-    ❌ Cerrar WebApp
+<button id="btnHealth">
+    ❤️ Health
 </button>
 
 </div>

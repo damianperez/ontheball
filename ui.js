@@ -42,7 +42,7 @@ class UI {
             "btnClear",
             "events",
             "btnVerify",
-            "btnPing",
+            "btnHealth",
             "btnClose"
 
         ];
@@ -134,6 +134,37 @@ class UI {
 
     }
 
+    static showHealth(data) {
+
+        let html = "";
+
+        Object.entries(data.checks).forEach(([key, value]) => {
+
+            html += `
+                <tr>
+                    <td>${key}</td>
+                    <td>${value.ok ? "🟢 OK" : "🔴 ERROR"}</td>
+                </tr>
+            `;
+
+        });
+
+        html += `
+            <tr>
+                <td><strong>Tiempo</strong></td>
+                <td>${data.response_ms} ms</td>
+            </tr>
+        `;
+
+        this.el.respuesta.innerHTML = `
+            <h3>❤️ Health Check</h3>
+
+            <table class="health-table">
+                ${html}
+            </table>
+        `;
+
+    }
     /* ============================================= */
 
     static showResponse(obj){
