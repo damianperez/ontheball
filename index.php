@@ -148,43 +148,18 @@ rows="5"></textarea>
 
 <div class="buttons">
 
-<button id="btnSendData">
-
-sendData()
-
-</button>
-
-<button id="btnPOST">
-
-POST
-
-</button>
-
-<button id="btnEstado">
-
-Estado
-
-</button>
-
-<button id="btnTelegram">
-
-Enviar Bot
-
-</button>
-
-<button id="btnClear">
-
-Limpiar
-
-</button>
+<button id="btnSendData">sendData()</button>
+<button id="btnPOST">POST</button>
+<button id="btnEstado">Estado</button>
+<button id="btnTelegram">Enviar Bot</button>
+<button id="btnClear">Limpiar</button>
 <button id="btnPing">Ping</button>
-</div>
 <button id="btnVerify">
     Verify
 </button>
-<button id="btnClear">
-Limpiar
-</button>
+
+</div>
+
 </section>
 
 <!-- ===================================================== -->
