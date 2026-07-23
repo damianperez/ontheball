@@ -285,7 +285,7 @@ static response(r) {
     static enableButtons(enable = true) {
 
         [
-        "btnPing",
+        "btnHealth",
             "btnSendData",
             "btnPOST",
             "btnEstado",
