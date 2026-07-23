@@ -60,27 +60,102 @@ file_put_contents(
 
 
 
-    $update =
-        json_decode(
+    $update =  json_decode( $raw, true );
 
-            $raw,
-
-            true
-
-        );
 
 
 
     if(!$update){
-
-
         throw new Exception(
-
             "Update inválido"
+        );
+    }
 
+    /*
+|--------------------------------------------------------------------------
+| Telegram WebApp sendData
+|--------------------------------------------------------------------------
+*/
+
+if (
+    isset(
+        $update["message"]["web_app_data"]
+    )
+) {
+
+
+    $raw =
+        $update["message"]["web_app_data"]["data"];
+
+
+    $data =
+        json_decode(
+            $raw,
+            true
         );
 
+
+    if(!$data){
+
+        $data = [
+            "raw"=>$raw
+        ];
+
     }
+
+
+
+    State::load();
+
+
+    State::event(
+
+        "SEND_DATA",
+
+        [
+
+            "chat_id" =>
+                $update["message"]["chat"]["id"],
+
+
+            "payload" =>
+                $data
+
+        ]
+
+    );
+
+
+    State::save();
+
+
+
+    Logger::json(
+
+        "SEND_DATA recibido",
+
+        $data,
+
+        BOT_LOG
+
+    );
+
+
+
+    /*
+    Respuesta opcional al usuario
+    */
+
+    TelegramClient::sendMessage(
+
+        $update["message"]["chat"]["id"],
+
+        "✅ SendData recibido correctamente"
+
+    );
+
+
+}
 
 
 
