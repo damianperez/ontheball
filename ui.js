@@ -169,10 +169,57 @@ class UI {
 }
     /* ============================================= */
 
-    static showResponse(obj){
+static showResponse(data, type = "auto") {
 
-    this.el.respuesta.value =
-        JSON.stringify(obj, null, 4);
+    if (!this.el.respuesta) {
+        return;
+    }
+
+    // Detección automática
+    if (type === "auto") {
+
+        if (typeof data === "string") {
+
+            const html = data.trim();
+
+            if (
+                html.startsWith("<") &&
+                html.endsWith(">")
+            ) {
+                type = "html";
+            } else {
+                type = "text";
+            }
+
+        } else {
+
+            type = "json";
+
+        }
+
+    }
+
+    switch (type) {
+
+        case "html":
+
+            this.el.respuesta.innerHTML = data;
+            break;
+
+        case "text":
+
+            this.el.respuesta.textContent = data;
+            break;
+
+        case "json":
+
+        default:
+
+            this.el.respuesta.textContent =
+                JSON.stringify(data, null, 4);
+            break;
+
+    }
 
 }
 static showJson(obj) {
