@@ -21,7 +21,7 @@ const APP = {
 
     polling: null,
 
-    pollingSeconds: 5,
+    pollingSeconds: 15, // cada 15 segundos decia 5 antes
 
     lastResponse: null,
 
