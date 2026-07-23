@@ -165,7 +165,23 @@ async function registrarAperturaWebApp(){
 
 }
 /* ========================================================== */
+function closeWebApp() {
 
+    UI.log("Cerrando WebApp...");
+
+    const tg = window.Telegram?.WebApp;
+
+    if (!tg) {
+
+        UI.error("Telegram.WebApp no disponible.");
+
+        return;
+
+    }
+
+    tg.close();
+
+}
 function debugTelegram() {
 
     UI.separator();
@@ -216,6 +232,7 @@ function installEvents() {
     UI.el.btnPing.onclick = pingServidor;
     UI.el.btnVerify.onclick = verifySistema;
     UI.el.btnSendData.onclick =  sendDataTelegram;
+    UI.el.btnClose.onclick = closeWebApp;
 
     UI.success("Eventos registrados");
 

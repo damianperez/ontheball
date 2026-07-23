@@ -42,7 +42,8 @@ class UI {
             "btnClear",
             "events",
             "btnVerify",
-            "btnPing"
+            "btnPing",
+            "btnClose"
 
         ];
 

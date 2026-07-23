@@ -157,6 +157,9 @@ rows="5"></textarea>
 <button id="btnVerify">
     Verify
 </button>
+<button id="btnClose" class="btn btn-danger">
+    ❌ Cerrar WebApp
+</button>
 
 </div>
 
