@@ -96,6 +96,24 @@ function initTelegram() {
     debugTelegram();
 
 }
+async function pingServidor() {
+
+    UI.log("Enviando ping...");
+
+    const r = await request("ping.php");
+
+    UI.response(r);
+
+    if (r.ok) {
+
+        UI.log("Servidor: " + r.data.server_time);
+        UI.log("PHP: " + r.data.php);
+        UI.log("Versión: " + r.data.version);
+        UI.log("Tiempo: " + r.data.response_ms + " ms");
+
+    }
+
+}
 async function closeWebApp() {
 
     UI.log("Iniciando cierre...");
