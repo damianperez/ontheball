@@ -103,6 +103,14 @@ if (
     /*
     Respuesta opcional al usuario
     */
+    if (isset( $data["message"] ))  {
+
+        TelegramClient::sendMessage(
+            $update["message"]["chat"]["id"],
+            $data["message"]
+        );
+    }
+    else {
     TelegramClient::sendMessage(
         $update["message"]["chat"]["id"],
         "✅ SendData recibido correctamente"
