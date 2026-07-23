@@ -52,7 +52,7 @@ class UI {
             this.el[id] = document.getElementById(id);
 
         });
-
+        console.log("btnClose:", this.el.btnClose);
         this.log("UI inicializada");
 
     }
