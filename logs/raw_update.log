@@ -1,0 +1,92 @@
+2026-07-22 21:41:09
+{"update_id":538018275,
+"message":{"message_id":5525,"from":{"id":662767623,"is_bot":false,"first_name":"Dami\u00e1n","username":"PerezDamian","language_code":"es"},"chat":{"id":662767623,"first_name":"Dami\u00e1n","username":"PerezDamian","type":"private"},"date":1784767269,"web_app_data":{"button_text":"\ud83d\ude80 Abrir Studio","data":"{\"evento\":\"SEND_DATA\",\"time\":\"2026-07-23T00:41:21.458Z\",\"message\":\"Hola desde Mini App\"}"}}}
+
+2026-07-22 21:45:49
+{"update_id":538018276,
+"message":{"message_id":5526,"from":{"id":662767623,"is_bot":false,"first_name":"Dami\u00e1n","username":"PerezDamian","language_code":"es"},"chat":{"id":662767623,"first_name":"Dami\u00e1n","username":"PerezDamian","type":"private"},"date":1784767548,"web_app_data":{"button_text":"\ud83d\ude80 Abrir Studio","data":"{\"evento\":\"SEND_DATA\",\"time\":\"2026-07-23T00:46:01.040Z\",\"message\":\"Hola desde Mini App\"}"}}}
+
+2026-07-23 11:13:42
+{"update_id":538018277,
+"message":{"message_id":5528,"from":{"id":662767623,"is_bot":false,"first_name":"Dami\u00e1n","username":"PerezDamian","language_code":"es"},"chat":{"id":662767623,"first_name":"Dami\u00e1n","username":"PerezDamian","type":"private"},"date":1784816022,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}}
+
+2026-07-23 11:16:52
+{"update_id":538018278,
+"message":{"message_id":5530,"from":{"id":662767623,"is_bot":false,"first_name":"Dami\u00e1n","username":"PerezDamian","language_code":"es"},"chat":{"id":662767623,"first_name":"Dami\u00e1n","username":"PerezDamian","type":"private"},"date":1784816211,"web_app_data":{"button_text":"\ud83d\ude80 Abrir Studio","data":"{\"evento\":\"SEND_DATA\",\"time\":\"2026-07-23T14:16:51.846Z\",\"message\":\"Hola desde Mini App\"}"}}}
+
+2026-07-23 11:21:49
+{"update_id":538018279,
+"message":{"message_id":5532,"from":{"id":662767623,"is_bot":false,"first_name":"Dami\u00e1n","username":"PerezDamian","language_code":"es"},"chat":{"id":662767623,"first_name":"Dami\u00e1n","username":"PerezDamian","type":"private"},"date":1784816509,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}}
+
+2026-07-23 11:23:19
+{"update_id":538018280,
+"message":{"message_id":5534,"from":{"id":662767623,"is_bot":false,"first_name":"Dami\u00e1n","username":"PerezDamian","language_code":"es"},"chat":{"id":662767623,"first_name":"Dami\u00e1n","username":"PerezDamian","type":"private"},"date":1784816599,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}}
+
+2026-07-23 11:24:17
+{"update_id":538018281,
+"message":{"message_id":5536,"from":{"id":662767623,"is_bot":false,"first_name":"Dami\u00e1n","username":"PerezDamian","language_code":"es"},"chat":{"id":662767623,"first_name":"Dami\u00e1n","username":"PerezDamian","type":"private"},"date":1784816657,"web_app_data":{"button_text":"\ud83d\ude80 Abrir Studio","data":"{\"evento\":\"SEND_DATA\",\"time\":\"2026-07-23T14:24:17.286Z\",\"message\":\"Hola desde Mini App\"}"}}}
+
+2026-07-23 11:25:05
+{"update_id":538018282,
+"message":{"message_id":5538,"from":{"id":662767623,"is_bot":false,"first_name":"Dami\u00e1n","username":"PerezDamian","language_code":"es"},"chat":{"id":662767623,"first_name":"Dami\u00e1n","username":"PerezDamian","type":"private"},"date":1784816704,"web_app_data":{"button_text":"\ud83d\ude80 Abrir Studio","data":"{\"evento\":\"SEND_DATA\",\"time\":\"2026-07-23T14:25:04.998Z\",\"message\":\"Hola desde Mini App\"}"}}}
+
+2026-07-23 11:27:26
+{"update_id":538018283,
+"message":{"message_id":5540,"from":{"id":662767623,"is_bot":false,"first_name":"Dami\u00e1n","username":"PerezDamian","language_code":"es"},"chat":{"id":662767623,"first_name":"Dami\u00e1n","username":"PerezDamian","type":"private"},"date":1784816845,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}}
+
+2026-07-23 18:33:20
+{"update_id":538018284,
+"message":{"message_id":5548,"from":{"id":662767623,"is_bot":false,"first_name":"Dami\u00e1n","username":"PerezDamian","language_code":"es"},"chat":{"id":662767623,"first_name":"Dami\u00e1n","username":"PerezDamian","type":"private"},"date":1784842399,"web_app_data":{"button_text":"\ud83d\ude80 Abrir Studio","data":"{\"evento\":\"SEND_DATA\",\"time\":\"2026-07-23T21:33:32.824Z\",\"message\":\"Hola desde Mini App\"}"}}}
+
+2026-07-23 18:37:11
+{"update_id":538018285,
+"message":{"message_id":5550,"from":{"id":662767623,"is_bot":false,"first_name":"Dami\u00e1n","username":"PerezDamian","language_code":"es"},"chat":{"id":662767623,"first_name":"Dami\u00e1n","username":"PerezDamian","type":"private"},"date":1784842631,"web_app_data":{"button_text":"\ud83d\ude80 Abrir Studio","data":"{\"evento\":\"SEND_DATA\",\"time\":\"2026-07-23T21:37:24.304Z\",\"message\":\"Hola desde Mini App\"}"}}}
+
+2026-07-23 18:37:36
+{"update_id":538018286,
+"message":{"message_id":5552,"from":{"id":662767623,"is_bot":false,"first_name":"Dami\u00e1n","username":"PerezDamian","language_code":"es"},"chat":{"id":662767623,"first_name":"Dami\u00e1n","username":"PerezDamian","type":"private"},"date":1784842656,"web_app_data":{"button_text":"\ud83d\ude80 Abrir Studio","data":"{\"evento\":\"SEND_DATA\",\"time\":\"2026-07-23T21:37:49.261Z\",\"message\":\"Hola desde Mini App\"}"}}}
+
+2026-07-23 18:42:37
+{"update_id":538018287,
+"message":{"message_id":5554,"from":{"id":662767623,"is_bot":false,"first_name":"Dami\u00e1n","username":"PerezDamian","language_code":"es"},"chat":{"id":662767623,"first_name":"Dami\u00e1n","username":"PerezDamian","type":"private"},"date":1784842957,"web_app_data":{"button_text":"\ud83d\ude80 Abrir Studio","data":"{\"evento\":\"SEND_DATA\",\"time\":\"2026-07-23T21:42:50.635Z\",\"message\":\"Hola desde Mini App\"}"}}}
+
+2026-07-23 18:43:08
+{"update_id":538018288,
+"message":{"message_id":5556,"from":{"id":662767623,"is_bot":false,"first_name":"Dami\u00e1n","username":"PerezDamian","language_code":"es"},"chat":{"id":662767623,"first_name":"Dami\u00e1n","username":"PerezDamian","type":"private"},"date":1784842987,"web_app_data":{"button_text":"\ud83d\ude80 Abrir Studio","data":"{\"evento\":\"SEND_DATA\",\"time\":\"2026-07-23T21:43:20.953Z\",\"message\":\"Hola desde Mini App\"}"}}}
+
+2026-07-23 19:22:04
+{"update_id":538018289,
+"message":{"message_id":5559,"from":{"id":662767623,"is_bot":false,"first_name":"Dami\u00e1n","username":"PerezDamian","language_code":"es"},"chat":{"id":662767623,"first_name":"Dami\u00e1n","username":"PerezDamian","type":"private"},"date":1784845324,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}}
+
+2026-07-23 19:22:21
+{"update_id":538018290,
+"message":{"message_id":5561,"from":{"id":662767623,"is_bot":false,"first_name":"Dami\u00e1n","username":"PerezDamian","language_code":"es"},"chat":{"id":662767623,"first_name":"Dami\u00e1n","username":"PerezDamian","type":"private"},"date":1784845341,"web_app_data":{"button_text":"\ud83d\ude80 Abrir Studio","data":"{\"evento\":\"SEND_DATA\",\"time\":\"2026-07-23T22:22:21.885Z\",\"message\":\"Hola desde Mini App\"}"}}}
+
+2026-07-23 19:23:24
+{"update_id":538018291,
+"message":{"message_id":5563,"from":{"id":662767623,"is_bot":false,"first_name":"Dami\u00e1n","username":"PerezDamian","language_code":"es"},"chat":{"id":662767623,"first_name":"Dami\u00e1n","username":"PerezDamian","type":"private"},"date":1784845404,"web_app_data":{"button_text":"\ud83d\ude80 Abrir Studio","data":"{\"evento\":\"SEND_DATA\",\"time\":\"2026-07-23T22:23:24.669Z\",\"message\":\"Hola desde Mini App\"}"}}}
+
+2026-07-23 19:23:51
+{"update_id":538018292,
+"message":{"message_id":5565,"from":{"id":662767623,"is_bot":false,"first_name":"Dami\u00e1n","username":"PerezDamian","language_code":"es"},"chat":{"id":662767623,"first_name":"Dami\u00e1n","username":"PerezDamian","type":"private"},"date":1784845430,"text":"/cancel","entities":[{"offset":0,"length":7,"type":"bot_command"}]}}
+
+2026-07-23 19:23:55
+{"update_id":538018293,
+"message":{"message_id":5566,"from":{"id":662767623,"is_bot":false,"first_name":"Dami\u00e1n","username":"PerezDamian","language_code":"es"},"chat":{"id":662767623,"first_name":"Dami\u00e1n","username":"PerezDamian","type":"private"},"date":1784845435,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}}
+
+2026-07-24 09:41:01
+{"update_id":538018294,
+"message":{"message_id":5568,"from":{"id":662767623,"is_bot":false,"first_name":"Dami\u00e1n","username":"PerezDamian","language_code":"es"},"chat":{"id":662767623,"first_name":"Dami\u00e1n","username":"PerezDamian","type":"private"},"date":1784896861,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}}
+
+2026-07-24 10:59:18
+{"update_id":538018295,
+"message":{"message_id":5570,"from":{"id":662767623,"is_bot":false,"first_name":"Dami\u00e1n","username":"PerezDamian","language_code":"es"},"chat":{"id":662767623,"first_name":"Dami\u00e1n","username":"PerezDamian","type":"private"},"date":1784901558,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}}
+
+2026-07-24 11:11:06
+{"update_id":538018296,
+"message":{"message_id":5572,"from":{"id":662767623,"is_bot":false,"first_name":"Dami\u00e1n","username":"PerezDamian","language_code":"es"},"chat":{"id":662767623,"first_name":"Dami\u00e1n","username":"PerezDamian","type":"private"},"date":1784902266,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}}
+
+2026-07-24 11:17:40
+{"update_id":538018297,
+"message":{"message_id":5575,"from":{"id":662767623,"is_bot":false,"first_name":"Dami\u00e1n","username":"PerezDamian","language_code":"es"},"chat":{"id":662767623,"first_name":"Dami\u00e1n","username":"PerezDamian","type":"private"},"date":1784902660,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}}
+

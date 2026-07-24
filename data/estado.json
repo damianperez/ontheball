@@ -1,0 +1,35 @@
+{
+    "events": [
+        {
+            "time": "11:38:18",
+            "type": "WEBAPP_OPEN",
+            "data": {
+                "evento": "WEBAPP_OPEN",
+                "telegram": {
+                    "id": 662767623,
+                    "username": "PerezDamian",
+                    "first_name": "Damián"
+                },
+                "app": {
+                    "platform": "tdesktop",
+                    "version": "9.6"
+                }
+            }
+        }
+    ],
+    "updated": "2026-07-24 11:38:18",
+    "last_post": {
+        "evento": "WEBAPP_OPEN",
+        "telegram": {
+            "id": 662767623,
+            "username": "PerezDamian",
+            "first_name": "Damián"
+        },
+        "app": {
+            "platform": "tdesktop",
+            "version": "9.6"
+        }
+    },
+    "last_update": [],
+    "last_senddata": []
+}
