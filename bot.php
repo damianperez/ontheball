@@ -146,23 +146,12 @@ if (
     |--------------------------------------------------------------------------
     */
     if(isset($update["message"]["web_app_data"])) {
-
-        $rawData =
-            $update["message"]["web_app_data"]["data"];
-
-        $sendData =
-            json_decode(
-                $rawData,
-                true
-            );
-
+        $rawData = $update["message"]["web_app_data"]["data"];
+        $sendData =  json_decode( $rawData, true );
         State::load();
-
         State::event(
             "SEND_DATA",
-            [
-                "data"=>$sendData
-            ]
+            [ "data"=>$sendData]
         );
 
         State::save();
@@ -177,17 +166,13 @@ if (
 
     if(isset($update["message"])){
 
-        $message =
-            $update["message"];
+        $message =$update["message"];
 
-        $chat_id =
-            $message["chat"]["id"];
+        $chat_id =$message["chat"]["id"];
 
-        $text =
-            $message["text"] ?? "";
+        $text =$message["text"] ?? "";
 
-        Logger::info(
-            "Mensaje BOT",
+        Logger::info("Mensaje BOT",
             $message,
             BOT_LOG
         );
