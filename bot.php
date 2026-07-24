@@ -198,52 +198,55 @@ if (
         |--------------------------------------------------------------------------
         */
 
+
+        // Estructura del InlineKeyboardMarkup
+
         if($text=="/start"){
-$keyboard = [
-    "keyboard" => [
-        [
-            [
-                "text" => "🚀 Abrir Studio",
-                "web_app" => [
-                    "url" => WEBAPP_URL
-                ]
-            ]
-        ]
-    ],
-    "resize_keyboard" => true
-];
+            $keyboard = [
+                "inline_keyboard" => [
+                    [
+                        [
+                            "text" => "🚀 Abrir Studio",
+                            "web_app" => [
+                                "url" => WEBAPP_URL
+                            ]
+                        ]
+                    ]
+                ],
+                "resize_keyboard" => true
+            ];
 
-TelegramClient::sendMessage(
-    $chat_id,
-    "Abrir Debug Studio",
-    [
-        "reply_markup" =>
-            json_encode($keyboard)
-    ]
-);
-        
-            State::event(
-                "BOT_START",
+            TelegramClient::sendMessage(
+                $chat_id,
+                "Abrir Debug Studio",
                 [
-                    "chat_id"=>$chat_id
+                    "reply_markup" =>
+                        json_encode($keyboard)
                 ]
             );
+                    
+                        State::event(
+                            "BOT_START",
+                            [
+                                "chat_id"=>$chat_id
+                            ]
+                        );
 
-            State::save();
+                        State::save();
 
-        }
+                    }
 
-        else {
+                    else {
 
-            State::event(
-                "BOT_MESSAGE",
-                [
-                    "chat_id"=>$chat_id,
-                    "text"=>$text
-                ]
-            );
+                        State::event(
+                            "BOT_MESSAGE",
+                            [
+                                "chat_id"=>$chat_id,
+                                "text"=>$text
+                            ]
+                        );
 
-            State::save();
+                        State::save();
 
         }
 
