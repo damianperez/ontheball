@@ -129,21 +129,15 @@ Versión <?= VERSION ?>
 <label>Mensaje</label>
 <textarea id="mensaje" rows="5"></textarea>
 <div class="buttons">
-
-<button id="btnSendData">sendData()</button>
-<button id="btnSendData2">sendData() (Native)</button>
-<button id="btnPOST">POST</button>
-<button id="btnEstado">Estado</button>
-<button id="btnTelegram">Enviar Bot</button>
-<button id="btnClear">Limpiar</button>
-<button id="btnHealth">
-    ❤️ Health
-</button>
-<button id="btnVerify">Verify</button>
-<button id="btnClose" class="btn btn-danger">
-    ❌ Cerrar WebApp
-</button>
-
+    <button id="btnSendData">sendData()</button>
+    <button id="btnSendData2">sendData() (Native)</button>
+    <button id="btnPOST">POST</button>
+    <button id="btnEstado">Estado</button>
+    <button id="btnTelegram">Enviar Bot</button>
+    <button id="btnClear">Limpiar</button>
+    <button id="btnHealth"> ❤️ Health</button>
+    <button id="btnVerify">Verify</button>
+    <button id="btnClose" class="btn btn-danger"> ❌ Cerrar WebApp</button>
 </div>
 
 </section>
