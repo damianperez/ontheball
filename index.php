@@ -147,6 +147,7 @@ Versión <?= VERSION ?>
 <h2>Respuesta</h2>
 
 <div id="respuesta" class="respuesta-panel"></div>
+<div id="error"class="respuesta-panel"></div>
 
 </section>
 <section class="panel">
