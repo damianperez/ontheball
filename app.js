@@ -363,7 +363,7 @@ function startPolling() {
     );
     APP.polling = setInterval(
         consultarEstado,
-        APP.pollingSeconds * 2500   //decia 1000 antes ms
+        APP.pollingSeconds * 5000   //decia 1000 antes ms
     );
 }
 /* ========================================================== */
