@@ -32,22 +32,19 @@ try {
         file_get_contents(
             "php://input"
         );
-file_put_contents(
-    "logs/raw_update.log",
-    date("Y-m-d H:i:s")."\n".
-    file_get_contents("php://input").
-    "\n\n",
-    FILE_APPEND
-);
+    file_put_contents(
+        "logs/raw_update.log",
+        date("Y-m-d H:i:s")."\n".
+        file_get_contents("php://input").
+        "\n\n",
+        FILE_APPEND
+    );
     Logger::json(
         "BOT UPDATE RAW",
         $raw,
         BOT_LOG
     );
-
     $update =  json_decode( $raw, true );
-
-
     if(!$update){
         throw new Exception(
             "Update inválido"
@@ -58,29 +55,18 @@ file_put_contents(
 | Telegram WebApp sendData
 |--------------------------------------------------------------------------
 */
-if (
-    isset(
-        $update["message"]["web_app_data"]
-    )
-) {
-
-    $raw =
-        $update["message"]["web_app_data"]["data"];
-
-    $data =
-        json_decode(
+if (isset($update["message"]["web_app_data"]    )) 
+    {
+    $raw = $update["message"]["web_app_data"]["data"];
+    $data =json_decode(
             $raw,
             true
         );
-
     if(!$data){
-        $data = [
-            "raw"=>$raw
-        ];
+        $data = [ "raw"=>$raw ];
     }
 
     State::load();
-
     State::event(
         "SEND_DATA",
         [
@@ -91,9 +77,7 @@ if (
                 $data
         ]
     );
-
     State::save();
-
     Logger::json(
         "SEND_DATA recibido",
         $data,
@@ -102,19 +86,12 @@ if (
 
     /*
     Respuesta opcional al usuario
-    */
-    if (isset($rawData)) {
-    TelegramClient::sendMessage(
-        $update["message"]["chat"]["id"],
-        $rawData
-    );
-    }
-    else {
+    */    
     TelegramClient::sendMessage(
         $update["message"]["chat"]["id"],
         "✅ SendData recibido correctamente"
     );
-    }
+    
 
 }
 
