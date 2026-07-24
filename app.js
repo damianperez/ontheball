@@ -134,8 +134,7 @@ function installEvents() {
     UI.el.btnHealth.onclick = healthCheck;
     UI.el.btnVerify.onclick = verifySistema;
     UI.el.btnSend2.onclick = sendDataNative;
-    //UI.el.btnSendData.onclick =  sendDataTelegram;
-    UI.el.btnSendData.onclick =  sendDataNative;    
+    UI.el.btnSendData.onclick =  sendDataTelegram;    
     UI.el.btnClose.onclick = closeWebApp;
     UI.success("Eventos registrados");
 }
