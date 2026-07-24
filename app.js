@@ -245,7 +245,7 @@ async function sendDataTelegram(){
  */
 function sendDataNative() {
     UI.separator();
-    UI.log("Telegram.sendData()");
+    UI.log("Telegram.sendDataNative()");
     if (!APP.tg) {
         UI.error("Telegram no inicializado");
         return;
@@ -254,10 +254,10 @@ function sendDataNative() {
     payload.origin = "sendData";
     APP.stats.sendData++;
     printPayload(payload);
-    UI.log( "Enviando sendData native ..."    );
+    UI.log( "Enviando sendDataNative ..."    );
     try {
         APP.tg.sendData(  JSON.stringify(payload));
-        UI.success("sendData native enviado");
+        UI.success("sendDataNative enviado");
     }
     catch (e) {
         APP.stats.errores++;
