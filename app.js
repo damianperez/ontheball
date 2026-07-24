@@ -284,26 +284,12 @@ async function sendDataTelegram(){
 
 
     const payload = {
-
         evento:"SEND_DATA",
-
-        time:
-            new Date().toISOString(),
-
-        message:
-            "Hola desde Mini App"
-
+        time: new Date().toISOString(),
+        message:"Hola desde Mini App"
     };
-
-
-    UI.log(
-        "Enviando sendData..."
-    );
-
-
-    tg.sendData(
-        JSON.stringify(payload)
-    );
+    UI.log( "Enviando sendData..."    );
+    tg.sendData(      JSON.stringify(payload)    );
 
 }
 async function verifySistema(){
