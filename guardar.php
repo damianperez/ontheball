@@ -7,22 +7,18 @@ require_once "state.php";
 $debug=[];
 
 try {
-
     $raw=file_get_contents(
         "php://input"
     );
-
     $data=json_decode(
         $raw,
         true
     );
-
     if(!$data){
         throw new Exception(
             "JSON inválido"
         );
     }
-
     Logger::json(
         "POST recibido",
         $data,

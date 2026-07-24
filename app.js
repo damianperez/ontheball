@@ -10,35 +10,20 @@
 const APP = {
 
     version: "1.0.0",
-
     tg: null,
-
     user: null,
-
     chat: null,
-
     startTime: Date.now(),
-
     polling: null,
-
     pollingSeconds: 5, // cada 15 segundos decia 5 antes
-
     lastResponse: null,
-
     stats: {
-
         sendData: 0,
-
         post: 0,
-
         estado: 0,
-
         telegram: 0,
-
         errores: 0
-
     }
-
 };
 
 /* ========================================================== */
@@ -576,34 +561,23 @@ async function pingServidor() {
     try {
 
         const response = await fetch(
-
             "verify.php"
-
         );
 
         const ms = Math.round(
-
             performance.now() - start
-
         );
 
         const json = await response.json();
-
         UI.showResponse(json);
-
         UI.success(
-
             "Ping " + ms + " ms"
-
         );
 
     }
     catch (e) {
-
         UI.error(e.message);
-
     }
-
 }
 
 /* ========================================================== */
@@ -625,15 +599,10 @@ function startPolling() {
         " segundos"
 
     );
-
     APP.polling = setInterval(
-
         consultarEstado,
-
-        APP.pollingSeconds * 5000   //decia 1000 antes
-
+        APP.pollingSeconds * 1000   //decia 1000 antes ms
     );
-
 }
 
 /* ========================================================== */
