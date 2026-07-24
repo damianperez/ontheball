@@ -123,29 +123,11 @@ Versión <?= VERSION ?>
 <!-- ===================================================== -->
 
 <section class="panel">
-
 <h2>Enviar Datos</h2>
-
-<label>
-
-Nombre
-
-</label>
-
-<input
-id="nombre"
-type="text">
-
-<label>
-
-Mensaje
-
-</label>
-
-<textarea
-id="mensaje"
-rows="5"></textarea>
-
+<label>Nombre</label>
+<input id="nombre" type="text">
+<label>Mensaje</label>
+<textarea id="mensaje" rows="5"></textarea>
 <div class="buttons">
 
 <button id="btnSendData">sendData()</button>

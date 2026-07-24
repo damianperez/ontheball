@@ -198,16 +198,11 @@ button{
 }
 
 button:hover{
-
     transform:scale(1.03);
-
 }
 
-#btnSendData{    background:var(--green);
-}
-
-#btnSendData2{    background:var(--green);
-}
+#btnSendData{    background:var(--green);}
+#btnSendData2{    background:var(--green);}
 
 #btnPOST{
 
