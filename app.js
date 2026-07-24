@@ -446,9 +446,10 @@ function sendDataNative() {
     payload.origin = "sendData";
     APP.stats.sendData++;
     printPayload(payload);
+    UI.log( "Enviando sendData native ..."    );
     try {
         APP.tg.sendData(  JSON.stringify(payload));
-        UI.success("sendData enviado");
+        UI.success("sendData native enviado");
     }
     catch (e) {
         APP.stats.errores++;
