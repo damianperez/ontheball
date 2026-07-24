@@ -1,4 +1,5 @@
 <?php
+
 /**
  * ==========================================================
  * Telegram WebApp Debug Studio
@@ -8,6 +9,7 @@
  * Webhook receptor Telegram
  * ==========================================================
  */
+
 declare(strict_types=1);
 
 require_once "config.php";
@@ -15,28 +17,25 @@ require_once "logger.php";
 require_once "state.php";
 require_once "telegram_client.php";
 
-$debug=[];
+$debug = [];
 
 try {
 
-    $start =
-        Logger::timerStart();
-
+    $start = Logger::timerStart();
     /*
     |--------------------------------------------------------------------------
     | Leer update Telegram
     |--------------------------------------------------------------------------
     */
-
     $raw =
         file_get_contents(
             "php://input"
         );
     file_put_contents(
         "logs/raw_update.log",
-        date("Y-m-d H:i:s")."\n".
-        file_get_contents("php://input").
-        "\n\n",
+        date("Y-m-d H:i:s") . "\n" .
+            file_get_contents("php://input") .
+            "\n\n",
         FILE_APPEND
     );
     Logger::json(
@@ -44,8 +43,14 @@ try {
         $raw,
         BOT_LOG
     );
-    $update =  json_decode( $raw, true );
-    if(!$update){
+    $update =  json_decode($raw, true);
+    Logger::json("UPDATE", $update, BOT_LOG);
+    echo "<pre>";
+    print_r($update);
+    echo "</pre>";
+
+    exit;
+    if (!$update) {
         throw new Exception(
             "Update inválido"
         );
@@ -55,48 +60,43 @@ try {
 | Telegram WebApp sendData
 |--------------------------------------------------------------------------
 */
-die( var_export($update, true) );
-if (isset($update["message"]["web_app_data"]    )) 
-    {
-    $raw = $update["message"]["web_app_data"]["data"];
-    $data =json_decode(
+    if (isset($update["message"]["web_app_data"])) {
+        $raw = $update["message"]["web_app_data"]["data"];
+        $data = json_decode(
             $raw,
             true
         );
-    if(!$data){
-        $data = [ "raw"=>$raw ];
+        if (!$data) {
+            $data = ["raw" => $raw];
+        }
+
+        State::load();
+        State::event(
+            "SEND_DATA",
+            [
+                "chat_id" =>
+                $update["message"]["chat"]["id"],
+                "payload" =>
+                $data
+            ]
+        );
+        State::save();
+        Logger::json(
+            "SEND_DATA recibido",
+            $data,
+            BOT_LOG
+        );
+
+        /*
+    Respuesta opcional al usuario
+    */
+        TelegramClient::sendMessage(
+            $update["message"]["chat"]["id"],
+            "✅ SendData recibido correctamente"
+        );
     }
 
-    State::load();
-    State::event(
-        "SEND_DATA",
-        [
-            "chat_id" =>
-                $update["message"]["chat"]["id"],
-
-            "payload" =>
-                $data
-        ]
-    );
-    State::save();
-    Logger::json(
-        "SEND_DATA recibido",
-        $data,
-        BOT_LOG
-    );
-
-    /*
-    Respuesta opcional al usuario
-    */    
-    TelegramClient::sendMessage(
-        $update["message"]["chat"]["id"],
-        "✅ SendData recibido correctamente"
-    );
-    
-
-}
-
-    $debug[]="Update recibido";
+    $debug[] = "Update recibido";
 
     /*
     |--------------------------------------------------------------------------
@@ -123,13 +123,13 @@ if (isset($update["message"]["web_app_data"]    ))
     | Procesar mensaje
     |--------------------------------------------------------------------------
     */
-    if(isset($update["message"]["web_app_data"])) {
+    if (isset($update["message"]["web_app_data"])) {
         $rawData = $update["message"]["web_app_data"]["data"];
-        $sendData =  json_decode( $rawData, true );
+        $sendData =  json_decode($rawData, true);
         State::load();
         State::event(
             "SEND_DATA",
-            [ "data"=>$sendData]
+            ["data" => $sendData]
         );
 
         State::save();
@@ -139,18 +139,18 @@ if (isset($update["message"]["web_app_data"]    ))
             $sendData,
             BOT_LOG
         );
-
     }
 
-    if(isset($update["message"])){
+    if (isset($update["message"])) {
 
-        $message =$update["message"];
+        $message = $update["message"];
 
-        $chat_id =$message["chat"]["id"];
+        $chat_id = $message["chat"]["id"];
 
-        $text =$message["text"] ?? "";
+        $text = $message["text"] ?? "";
 
-        Logger::info("Mensaje BOT",
+        Logger::info(
+            "Mensaje BOT",
             $message,
             BOT_LOG
         );
@@ -164,7 +164,7 @@ if (isset($update["message"]["web_app_data"]    ))
 
         // Estructura del InlineKeyboardMarkup
 
-        if($text=="/start"){
+        if ($text == "/start") {
             $keyboard = [
                 "inline_keyboard" => [
                     [
@@ -184,35 +184,30 @@ if (isset($update["message"]["web_app_data"]    ))
                 "Abrir Debug Studio",
                 [
                     "reply_markup" =>
-                        json_encode($keyboard)
+                    json_encode($keyboard)
                 ]
             );
-                    
-                        State::event(
-                            "BOT_START",
-                            [
-                                "chat_id"=>$chat_id
-                            ]
-                        );
 
-                        State::save();
+            State::event(
+                "BOT_START",
+                [
+                    "chat_id" => $chat_id
+                ]
+            );
 
-                    }
+            State::save();
+        } else {
 
-                    else {
+            State::event(
+                "BOT_MESSAGE",
+                [
+                    "chat_id" => $chat_id,
+                    "text" => $text
+                ]
+            );
 
-                        State::event(
-                            "BOT_MESSAGE",
-                            [
-                                "chat_id"=>$chat_id,
-                                "text"=>$text
-                            ]
-                        );
-
-                        State::save();
-
+            State::save();
         }
-
     }
 
     /*
@@ -226,27 +221,25 @@ if (isset($update["message"]["web_app_data"]    ))
             $start
         );
 
-    $debug[]=
-        "Tiempo ".$ms." ms";
+    $debug[] =
+        "Tiempo " . $ms . " ms";
 
     jsonResponse(
         true,
         [
-            "received"=>true,
-            "elapsed_ms"=>$ms
+            "received" => true,
+            "elapsed_ms" => $ms
         ],
         $debug
     );
-
-}
-catch(Throwable $e){
+} catch (Throwable $e) {
 
     Logger::exception($e);
 
     jsonResponse(
         false,
         [
-            "error"=>
+            "error" =>
             $e->getMessage()
         ],
         $debug,
