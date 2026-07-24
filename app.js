@@ -243,14 +243,9 @@ function debugTelegram() {
 
 function installEvents() {
 
-    
-
     UI.el.btnPOST.onclick = sendPOST;
-
     UI.el.btnEstado.onclick = consultarEstado;
-
     UI.el.btnTelegram.onclick = enviarMensajeBot;
-
     UI.el.btnClear.onclick = clearDebug;
 
     UI.el.btnHealth.onclick = healthCheck;
@@ -258,7 +253,6 @@ function installEvents() {
     UI.el.btnSendData.onclick =  sendDataTelegram;
     UI.el.btnSendData2.onclick = sendDataNative;
     UI.el.btnClose.onclick = closeWebApp;
-
     UI.success("Eventos registrados");
 
 }
