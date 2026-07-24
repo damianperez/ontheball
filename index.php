@@ -119,9 +119,7 @@ Versión <?= VERSION ?>
 </table>
 
 </section>
-
 <!-- ===================================================== -->
-
 <section class="panel">
 <h2>Enviar Datos</h2>
 <label>Nombre</label>
