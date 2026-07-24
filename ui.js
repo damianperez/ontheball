@@ -22,6 +22,7 @@ class UI {
             "nombre",
             "mensaje",
             "respuesta",
+            "error",
             "debug",
             "initData",
             "initDataUnsafe",
@@ -243,7 +244,7 @@ static response(r) {
         `;
     }
     static error(message) {
-        const el = document.getElementById("respuesta");
+        const el = document.getElementById("error");
         if (!el) return;
         el.innerHTML = `
             <div class="alert error">
