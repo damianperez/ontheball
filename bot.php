@@ -55,6 +55,7 @@ try {
 | Telegram WebApp sendData
 |--------------------------------------------------------------------------
 */
+die( var_export($update, true) );
 if (isset($update["message"]["web_app_data"]    )) 
     {
     $raw = $update["message"]["web_app_data"]["data"];
