@@ -226,9 +226,7 @@ static response(r) {
         });
     }
     /* ============================================= */
-    static busy() {
-        this.enableButtons(false);
-    }
+    static busy() {        this.enableButtons(false);    }
     /* ============================================= */
     static ready() {
         this.enableButtons(true);
