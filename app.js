@@ -68,31 +68,18 @@ function initApplication() {
 /* ========================================================== */
 
 function initTelegram() {
-
     if (typeof Telegram === "undefined") {
-
         UI.error("telegram-web-app.js NO cargado");
-
         return;
-
     }
-
     APP.tg = window.Telegram.WebApp;
-
     APP.tg.ready();
-
     registrarAperturaWebApp();
-
     APP.tg.expand();
-
     APP.user = APP.tg.initDataUnsafe.user || {};
-
     APP.chat = APP.tg.initDataUnsafe.chat || {};
-
     UI.success("Telegram inicializado");
-
     UI.showTelegram(APP.tg);
-
     debugTelegram();
 
 }
@@ -269,29 +256,14 @@ function installEvents() {
     UI.el.btnHealth.onclick = healthCheck;
     UI.el.btnVerify.onclick = verifySistema;
     UI.el.btnSendData.onclick =  sendDataTelegram;
-    //UI.el.btnSendData.onclick = sendDataNative;
+    UI.el.btnSendData2.onclick = sendDataNative;
     UI.el.btnClose.onclick = closeWebApp;
 
     UI.success("Eventos registrados");
 
 }
 
-/* ========================================================== */
-async function sendDataTelegram(){
 
-    const tg =
-        window.Telegram.WebApp;
-
-
-    const payload = {
-        evento:"SEND_DATA",
-        time: new Date().toISOString(),
-        message:"Hola desde Mini App"
-    };
-    UI.log( "Enviando sendData..."    );
-    tg.sendData(      JSON.stringify(payload)    );
-
-}
 async function verifySistema(){
 
     UI.separator();
@@ -413,13 +385,9 @@ async function request(url, data = {}) {
     try {
 
         const response = await fetch(url, {
-
             method: "POST",
-
             headers: {
-
                 "Content-Type": "application/json"
-
             },
 
             body: JSON.stringify(data)
@@ -459,46 +427,38 @@ async function request(url, data = {}) {
    BLOQUE 2
    Comunicación
    ========================================================== */
-
+/* ========================================================== */
+async function sendDataTelegram(){
+    const tg = window.Telegram.WebApp;
+    const payload = {
+        evento:"SEND_DATA",
+        time: new Date().toISOString(),
+        message:"Hola desde Mini App"
+    };
+    UI.log( "Enviando sendData..."    );
+    tg.sendData(      JSON.stringify(payload)    );
+}
 /**
  * Enviar mediante Telegram.WebApp.sendData()
  */
 function sendDataNative() {
-
     UI.separator();
     UI.log("Telegram.sendData()");
-
     if (!APP.tg) {
-
         UI.error("Telegram no inicializado");
-
         return;
-
     }
-
     const payload = getPayload();
-
     payload.origin = "sendData";
-
     APP.stats.sendData++;
-
     printPayload(payload);
-
     try {
-
-        APP.tg.sendData(
-            JSON.stringify(payload)
-        );
-
+        APP.tg.sendData(  JSON.stringify(payload));
         UI.success("sendData enviado");
-
     }
     catch (e) {
-
         APP.stats.errores++;
-
         UI.error(e.message);
-
     }
 
 }

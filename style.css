@@ -203,10 +203,10 @@ button:hover{
 
 }
 
-#btnSendData{
+#btnSendData{    background:var(--green);
+}
 
-    background:var(--green);
-
+#btnSendData2{    background:var(--green);
 }
 
 #btnPOST{

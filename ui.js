@@ -36,6 +36,7 @@ class UI {
             "initDataUnsafe",
 
             "btnSendData",
+            "btnSendData2",
             "btnPOST",
             "btnEstado",
             "btnTelegram",
@@ -359,6 +360,7 @@ static response(r) {
         [
         "btnHealth",
             "btnSendData",
+            "btnSendData2", 
             "btnPOST",
             "btnEstado",
             "btnTelegram",
