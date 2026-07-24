@@ -130,7 +130,7 @@ Versión <?= VERSION ?>
 <textarea id="mensaje" rows="5"></textarea>
 <div class="buttons">
     <button id="btnSendData">sendData()</button>
-    <button id="btnSendData2">sendData() (Native)</button>
+    <button id="btnSend2">sendData() (Native)</button>
     <button id="btnPOST">POST</button>
     <button id="btnEstado">Estado</button>
     <button id="btnTelegram">Enviar Bot</button>
