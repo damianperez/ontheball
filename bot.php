@@ -88,8 +88,7 @@ try {
             $data,
             BOT_LOG
         );
-
-        /*
+    /*
     Respuesta opcional al usuario
     */
         TelegramClient::sendMessage(
