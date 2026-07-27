@@ -254,6 +254,7 @@ function sendDataNative() {
     APP.stats.sendData++;
     printPayload(payload);
     UI.log( "Enviando sendDataNative ..."    );
+    UI.log( "Payload: " + JSON.stringify(payload)    );
     try {
         APP.tg.sendData(  JSON.stringify(payload));
         UI.success("sendDataNative enviado");
