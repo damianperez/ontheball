@@ -101,10 +101,7 @@ async function registrarAperturaWebApp(){
         );
     }
     catch(e){
-        UI.error(
-            "Error WEBAPP_OPEN: "
-            + e.message
-        );
+        UI.error(            "Error WEBAPP_OPEN: "            + e.message        );
     }
 }
 /* ========================================================== */
@@ -256,6 +253,7 @@ function sendDataNative() {
     UI.log( "Enviando sendDataNative ..."    );
     UI.log( "Payload: " + JSON.stringify(payload)    );
     try {
+        APP.tg.sendData('Enviado desde sendDataNative');
         APP.tg.sendData(  JSON.stringify(payload));
         UI.success("sendDataNative enviado");
     }

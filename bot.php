@@ -94,7 +94,7 @@ try {
     */
         TelegramClient::sendMessage(
             $update["message"]["chat"]["id"],
-            "✅ SendData recibido correctamente"
+            "✅ SendData recibido correctamente".$data["raw"]
         );
     }
 
