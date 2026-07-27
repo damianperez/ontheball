@@ -100,7 +100,8 @@ try {
             CURLOPT_POSTFIELDS=>
                 json_encode($update),
             CURLOPT_HTTPHEADER=>[
-                "Content-Type: application/json"
+                "Content-Type: application/json",
+                'X-Telegram-Init-Data: ' . $_SERVER['HTTP_X_TELEGRAM_INIT_DATA'] // Enviamos la firma para validar en PHP
             ]
         ]
     );
