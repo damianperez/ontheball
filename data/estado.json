@@ -15,21 +15,139 @@
                     "version": "9.6"
                 }
             }
+        },
+        {
+            "time": "12:11:22",
+            "type": "WEBAPP_OPEN",
+            "data": {
+                "evento": "WEBAPP_OPEN",
+                "telegram": {
+                    "id": null,
+                    "username": null,
+                    "first_name": null
+                },
+                "app": {
+                    "platform": "tdesktop",
+                    "version": "9.6"
+                }
+            }
+        },
+        {
+            "time": "12:11:27",
+            "type": "SEND_DATA",
+            "data": {
+                "chat_id": 662767623,
+                "payload": {
+                    "time": "2026-07-27T15:11:27.648Z",
+                    "telegram": {
+                        "id": null,
+                        "username": "",
+                        "first_name": "",
+                        "last_name": "",
+                        "language": ""
+                    },
+                    "form": {
+                        "nombre": "dd",
+                        "mensaje": "gg"
+                    },
+                    "origin": "sendData"
+                }
+            }
+        },
+        {
+            "time": "12:11:28",
+            "type": "BOT_UPDATE",
+            "data": {
+                "update_id": 538018311,
+                "message": {
+                    "message_id": 5604,
+                    "from": {
+                        "id": 662767623,
+                        "is_bot": false,
+                        "first_name": "Damián",
+                        "username": "PerezDamian",
+                        "language_code": "es"
+                    },
+                    "chat": {
+                        "id": 662767623,
+                        "first_name": "Damián",
+                        "username": "PerezDamian",
+                        "type": "private"
+                    },
+                    "date": 1785165087,
+                    "web_app_data": {
+                        "button_text": "🚀 Abrir Studio",
+                        "data": "{\"time\":\"2026-07-27T15:11:27.648Z\",\"telegram\":{\"id\":null,\"username\":\"\",\"first_name\":\"\",\"last_name\":\"\",\"language\":\"\"},\"form\":{\"nombre\":\"dd\",\"mensaje\":\"gg\"},\"origin\":\"sendData\"}"
+                    }
+                }
+            }
+        },
+        {
+            "time": "12:11:28",
+            "type": "SEND_DATA",
+            "data": {
+                "data": {
+                    "time": "2026-07-27T15:11:27.648Z",
+                    "telegram": {
+                        "id": null,
+                        "username": "",
+                        "first_name": "",
+                        "last_name": "",
+                        "language": ""
+                    },
+                    "form": {
+                        "nombre": "dd",
+                        "mensaje": "gg"
+                    },
+                    "origin": "sendData"
+                }
+            }
+        },
+        {
+            "time": "12:11:28",
+            "type": "BOT_MESSAGE",
+            "data": {
+                "chat_id": 662767623,
+                "text": ""
+            }
         }
     ],
-    "updated": "2026-07-24 11:38:18",
+    "updated": "2026-07-27 12:11:28",
     "last_post": {
         "evento": "WEBAPP_OPEN",
         "telegram": {
-            "id": 662767623,
-            "username": "PerezDamian",
-            "first_name": "Damián"
+            "id": null,
+            "username": null,
+            "first_name": null
         },
         "app": {
             "platform": "tdesktop",
             "version": "9.6"
         }
     },
-    "last_update": [],
+    "last_update": {
+        "update_id": 538018311,
+        "message": {
+            "message_id": 5604,
+            "from": {
+                "id": 662767623,
+                "is_bot": false,
+                "first_name": "Damián",
+                "username": "PerezDamian",
+                "language_code": "es"
+            },
+            "chat": {
+                "id": 662767623,
+                "first_name": "Damián",
+                "username": "PerezDamian",
+                "type": "private"
+            },
+            "date": 1785165087,
+            "web_app_data": {
+                "button_text": "🚀 Abrir Studio",
+                "data": "{\"time\":\"2026-07-27T15:11:27.648Z\",\"telegram\":{\"id\":null,\"username\":\"\",\"first_name\":\"\",\"last_name\":\"\",\"language\":\"\"},\"form\":{\"nombre\":\"dd\",\"mensaje\":\"gg\"},\"origin\":\"sendData\"}"
+            }
+        }
+    },
     "last_senddata": []
 }

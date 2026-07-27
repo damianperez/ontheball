@@ -1,0 +1,47 @@
+
+================================================================================
+DATE    : 2026-07-27 12:11:27
+LEVEL   : INFO
+TITLE   : Telegram REQUEST sendMessage
+IP      : 91.108.5.56
+METHOD  : POST
+URI     : /ontheball/bot.php
+MEMORY  : 2 MB
+--------------------------------------------------------------------------------
+{
+    "chat_id": 662767623,
+    "text": "✅ SendData recibido correctamente:",
+    "parse_mode": "HTML"
+}
+================================================================================
+
+================================================================================
+DATE    : 2026-07-27 12:11:28
+LEVEL   : JSON
+TITLE   : Telegram RESPONSE 375.63ms
+IP      : 91.108.5.56
+METHOD  : POST
+URI     : /ontheball/bot.php
+MEMORY  : 2 MB
+--------------------------------------------------------------------------------
+{
+    "ok": true,
+    "result": {
+        "message_id": 5605,
+        "from": {
+            "id": 1618069377,
+            "is_bot": true,
+            "first_name": "On the Ball",
+            "username": "ontheballbot"
+        },
+        "chat": {
+            "id": 662767623,
+            "first_name": "Damián",
+            "username": "PerezDamian",
+            "type": "private"
+        },
+        "date": 1785165088,
+        "text": "✅ SendData recibido correctamente:"
+    }
+}
+================================================================================
