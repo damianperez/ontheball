@@ -45,3 +45,50 @@ MEMORY  : 2 MB
     }
 }
 ================================================================================
+
+================================================================================
+DATE    : 2026-07-27 12:17:29
+LEVEL   : INFO
+TITLE   : Telegram REQUEST sendMessage
+IP      : 91.108.5.56
+METHOD  : POST
+URI     : /ontheball/bot.php
+MEMORY  : 2 MB
+--------------------------------------------------------------------------------
+{
+    "chat_id": 662767623,
+    "text": "✅ SendData recibido correctamente:array (\n  'time' => '2026-07-27T15:17:29.179Z',\n  'telegram' => \n  array (\n    'id' => NULL,\n    'username' => '',\n    'first_name' => '',\n    'last_name' => '',\n    'language' => '',\n  ),\n  'form' => \n  array (\n    'nombre' => 'd',\n    'mensaje' => 'd',\n  ),\n  'origin' => 'sendData',\n)",
+    "parse_mode": "HTML"
+}
+================================================================================
+
+================================================================================
+DATE    : 2026-07-27 12:17:29
+LEVEL   : JSON
+TITLE   : Telegram RESPONSE 392.39ms
+IP      : 91.108.5.56
+METHOD  : POST
+URI     : /ontheball/bot.php
+MEMORY  : 2 MB
+--------------------------------------------------------------------------------
+{
+    "ok": true,
+    "result": {
+        "message_id": 5607,
+        "from": {
+            "id": 1618069377,
+            "is_bot": true,
+            "first_name": "On the Ball",
+            "username": "ontheballbot"
+        },
+        "chat": {
+            "id": 662767623,
+            "first_name": "Damián",
+            "username": "PerezDamian",
+            "type": "private"
+        },
+        "date": 1785165449,
+        "text": "✅ SendData recibido correctamente:array (\n  'time' => '2026-07-27T15:17:29.179Z',\n  'telegram' => \n  array (\n    'id' => NULL,\n    'username' => '',\n    'first_name' => '',\n    'last_name' => '',\n    'language' => '',\n  ),\n  'form' => \n  array (\n    'nombre' => 'd',\n    'mensaje' => 'd',\n  ),\n  'origin' => 'sendData',\n)"
+    }
+}
+================================================================================
