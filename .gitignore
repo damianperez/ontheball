@@ -1,3 +1,5 @@
 vendor/
 .vscode/
+logs/
+data/
 #Config.php
