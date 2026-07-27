@@ -273,24 +273,15 @@ static showEvents(events){
     let html="";
     events.reverse().forEach((e,i)=>{
         html+=`
-<div class="event"
-onclick="UI.toggleEvent(${i})">
-<div>
-<span class="eventTime">
-${e.time}
-</span>
-&nbsp;
-<span class="eventType">
-${e.type}
-</span>
-</div>
-<pre
-id="event_${i}"
-class="eventJson">
-${JSON.stringify(e.data,null,4)}
-</pre>
-</div>
-`;
+            <div class="event"  onclick="UI.toggleEvent(${i})">
+                <div><span class="eventTime">${e.time}</span>&nbsp;
+                    <span class="eventType">${e.type}</span>
+                </div>
+                <pre id="event_${i}"class="eventJson">
+                    ${JSON.stringify(e.data,null,4)}
+                </pre>
+            </div>
+            `;
     });
     this.el.events.innerHTML=html;
 }
