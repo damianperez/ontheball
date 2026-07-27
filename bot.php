@@ -111,6 +111,9 @@ try {
             ]
             //"✅ SendData recibido correctamente:".var_export($data, true)
             /*
+            
+            
+            
             Si viene 'Nativo, viene : 
                      array (
                         'time' => '2026-07-27T15:17:29.179Z',
