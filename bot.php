@@ -45,11 +45,13 @@ try {
     );
     $update =  json_decode($raw, true);
     Logger::json("UPDATE", $update, BOT_LOG);
+    /*
     echo "<pre>";
     print_r($update);
     echo "</pre>";
 
     exit;
+    */
     if (!$update) {
         throw new Exception(
             "Update inválido"

@@ -249,6 +249,7 @@ function sendDataNative() {
         return;
     }
     const payload = getPayload();
+    UI.error("SND");
     payload.origin = "sendData";
     APP.stats.sendData++;
     printPayload(payload);

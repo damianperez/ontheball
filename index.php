@@ -1,9 +1,7 @@
 <?php
 
 declare(strict_types=1);
-
 require_once "config.php";
-
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -14,10 +12,7 @@ require_once "config.php";
 
 <title><?= PROJECT_NAME ?></title>
 
-<meta
-    name="viewport"
-    content="width=device-width,initial-scale=1">
-
+<meta     name="viewport"    content="width=device-width,initial-scale=1">
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 
 <link rel="stylesheet" href="style.css">
