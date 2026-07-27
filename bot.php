@@ -94,7 +94,43 @@ try {
     */
         TelegramClient::sendMessage(
             $update["message"]["chat"]["id"],
-            "✅ SendData recibido correctamente:".var_export($data, true)
+            $data["form"]["nombre"] . " " . $data["form"]["mensaje"],
+            [
+                "reply_markup" =>
+                json_encode(
+                    [
+                        "inline_keyboard" => [
+                            [
+                                [
+                                    "text" => "✅ OK",
+                                    "callback_data" => "ok"
+                                ]
+                            ]
+                        ]
+                    ]
+                )
+            ]
+            //"✅ SendData recibido correctamente:".var_export($data, true)
+            /*
+            Si viene 'Nativo, viene : 
+                     array (
+                        'time' => '2026-07-27T15:17:29.179Z',
+                        'telegram' => 
+                        array (
+                            'id' => NULL,
+                            'username' => '',
+                            'first_name' => '',
+                            'last_name' => '',
+                            'language' => '',
+                        ),
+                        'form' => 
+                        array (
+                            'nombre' => 'd',
+                            'mensaje' => 'd',
+                        ),
+                        'origin' => 'sendData',
+                        )
+                                    */
         );
     }
 
