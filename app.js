@@ -200,7 +200,8 @@ async function request(url, data = {}) {
         const response = await fetch(url, {
             method: "POST",
             headers: {
-                "Content-Type": "application/json"
+                'Content-Type': 'application/json',
+                'X-Telegram-Init-Data': tg.initData // Enviamos la firma para validar en PHP
             },
             body: JSON.stringify(data)
         });
