@@ -246,8 +246,7 @@ function sendDataNative() {
         UI.error("Telegram no inicializado");
         return;
     }
-    const payload = getPayload();
-    UI.error("SND NAtive: " + JSON.stringify(payload));
+    const payload = getPayload();    
     payload.origin = "sendDataNative";
     APP.stats.sendData++;
     printPayload(payload);
