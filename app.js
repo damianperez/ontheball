@@ -247,7 +247,7 @@ function sendDataNative() {
         return;
     }
     const payload = getPayload();
-    UI.error("SND");
+    UI.error("SND NAtive: " + JSON.stringify(payload));
     payload.origin = "sendDataNative";
     APP.stats.sendData++;
     printPayload(payload);
