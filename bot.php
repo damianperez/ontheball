@@ -93,7 +93,7 @@ try {
     */
         TelegramClient::sendMessage(
             $update["message"]["chat"]["id"],
-            'recibido: ' . $data["form"]["nombre"] . " " . $data["form"]["mensaje"],
+            'recibido: ' . var_export($data, true),
             [
                 "reply_markup" =>
                 json_encode(
