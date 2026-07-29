@@ -201,7 +201,7 @@ async function request(url, data = {}) {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
-                'X-Telegram-Init-Data': tg.initData // Enviamos la firma para validar en PHP
+                'X-Telegram-Init-Data': APP.tg.initData // Enviamos la firma para validar en PHP
             },
             body: JSON.stringify(data)
         });
