@@ -248,14 +248,15 @@ function sendDataNative() {
     }
     const payload = getPayload();
     UI.error("SND");
-    payload.origin = "sendData";
+    payload.origin = "sendDataNative";
     APP.stats.sendData++;
     printPayload(payload);
     UI.log( "Enviando sendDataNative ..."    );
     UI.log( "Payload: " + JSON.stringify(payload)    );
     try {
-        APP.tg.sendData('Enviado desde sendDataNative');
         APP.tg.sendData(  JSON.stringify(payload));
+        //APP.tg.sendData('Enviado desde sendDataNative');
+        //APP.tg.sendData(  JSON.stringify(payload));
         UI.success("sendDataNative enviado");
     }
     catch (e) {
