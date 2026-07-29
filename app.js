@@ -54,7 +54,7 @@ async function healthCheck() {
     UI.log("Ejecutando Health Check...");
     const r = await request("health.php");
     if (!r.ok) {
-        UI.error(r.data?.error ?? "Error");
+        UI.error(r.data?.error ?? "Error health check");
         return;
     }
     UI.showHealth(r.data);
@@ -214,7 +214,7 @@ async function request(url, data = {}) {
     }
     catch (e) {
         APP.stats.errores++;
-        UI.error(e.message);
+        UI.error('request' + e.message);
         return null;
     }
     finally {
@@ -261,7 +261,7 @@ function sendDataNative() {
     }
     catch (e) {
         APP.stats.errores++;
-        UI.error(e.message);
+        UI.error('native' + e.message);
     }
 }
 /* ========================================================== */
@@ -348,7 +348,7 @@ async function pingServidor() {
         );
     }
     catch (e) {
-        UI.error(e.message);
+        UI.error('ping' + e.message);
     }
 }
 /* ========================================================== */
