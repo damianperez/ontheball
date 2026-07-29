@@ -641,9 +641,62 @@
                 "chat_id": 662767623,
                 "text": ""
             }
+        },
+        {
+            "time": "12:39:52",
+            "type": "SEND_DATA",
+            "data": {
+                "chat_id": 662767623,
+                "payload": {
+                    "raw": "Enviado desde sendDataNative"
+                }
+            }
+        },
+        {
+            "time": "12:39:53",
+            "type": "BOT_UPDATE",
+            "data": {
+                "update_id": 538018329,
+                "message": {
+                    "message_id": 5636,
+                    "from": {
+                        "id": 662767623,
+                        "is_bot": false,
+                        "first_name": "Damián",
+                        "username": "PerezDamian",
+                        "language_code": "es"
+                    },
+                    "chat": {
+                        "id": 662767623,
+                        "first_name": "Damián",
+                        "username": "PerezDamian",
+                        "type": "private"
+                    },
+                    "date": 1785339592,
+                    "web_app_data": {
+                        "button_text": "🚀 Abrir Studio",
+                        "data": "Enviado desde sendDataNative"
+                    }
+                }
+            }
+        },
+        {
+            "time": "12:39:53",
+            "type": "SEND_DATA",
+            "data": {
+                "data": null
+            }
+        },
+        {
+            "time": "12:39:53",
+            "type": "BOT_MESSAGE",
+            "data": {
+                "chat_id": 662767623,
+                "text": ""
+            }
         }
     ],
-    "updated": "2026-07-29 10:32:25",
+    "updated": "2026-07-29 12:39:53",
     "last_post": {
         "evento": "WEBAPP_OPEN",
         "telegram": {
@@ -657,9 +710,9 @@
         }
     },
     "last_update": {
-        "update_id": 538018324,
+        "update_id": 538018329,
         "message": {
-            "message_id": 5626,
+            "message_id": 5636,
             "from": {
                 "id": 662767623,
                 "is_bot": false,
@@ -673,7 +726,7 @@
                 "username": "PerezDamian",
                 "type": "private"
             },
-            "date": 1785331945,
+            "date": 1785339592,
             "web_app_data": {
                 "button_text": "🚀 Abrir Studio",
                 "data": "Enviado desde sendDataNative"
