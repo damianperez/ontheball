@@ -202,9 +202,16 @@ try {
         */
 
 
-        // Estructura del InlineKeyboardMarkup
+        
+        // Create the inline keyboard and add a row of buttons
+       
+        
+     
+        
+
 
         if ($text == "/start") {
+
             $keyboard = [
                 "inline_keyboard" => [
                     [
@@ -218,6 +225,22 @@ try {
                 ],
                 "resize_keyboard" => true
             ];
+
+
+
+
+            $keyboard = [ 
+                "inline_keyboard" => [
+                   [
+                    ["text" => "🚀 Abrir Studio", "web_app" => ["url" => WEBAPP_URL]],
+                     ["text" => "App", "web_app" => ["url" => "https://bots.perezcompany.com.ar/durger-king/public"]],
+                    ["text" => "Demo", "web_app" => ["url" => "https://bots.perezcompany.com.ar/durger-king/public/demo.php"]]    
+
+                 ]
+                ],
+                "resize_keyboard" => true,
+            ]
+                ;
 
             TelegramClient::sendMessage(
                 $chat_id,
