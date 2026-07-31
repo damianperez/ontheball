@@ -171,6 +171,14 @@ static response(r) {
 }
     /* ============================================= */
     static showTelegram(tg) {
+
+        if (
+            !tg.initDataUnsafe ||
+            !tg.initDataUnsafe.query_id
+        ) {
+            alert('No se detecta query_id en initDataUnsafe. Asegúrate de que la app esté abierta desde Telegram y no desde un navegador externo.');
+        }
+
         const u = tg.initDataUnsafe.user || {};
         this.set("tg_id", u.id || "");
         this.set("tg_name",
