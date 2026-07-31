@@ -98,7 +98,7 @@ if (!file_exists(STATE_FILE)) {
 | Respuesta JSON estándar
 |--------------------------------------------------------------------------
 */
-function jsonResponse(
+function jsonResponseDurger(
     bool $ok,
     mixed $data = null,
     array $debug = [],
