@@ -1,7 +1,425 @@
 {
-    "events": [],
+    "events": [
+        {
+            "time": "12:10:12",
+            "type": "BOT_UPDATE",
+            "data": {
+                "update_id": 798870333,
+                "message": {
+                    "message_id": 1125,
+                    "from": {
+                        "id": 662767623,
+                        "is_bot": false,
+                        "first_name": "Damián",
+                        "username": "PerezDamian",
+                        "language_code": "es"
+                    },
+                    "chat": {
+                        "id": 662767623,
+                        "first_name": "Damián",
+                        "username": "PerezDamian",
+                        "type": "private"
+                    },
+                    "date": 1785509867,
+                    "text": "\/start",
+                    "entities": [
+                        {
+                            "offset": 0,
+                            "length": 6,
+                            "type": "bot_command"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "time": "12:10:13",
+            "type": "BOT_START",
+            "data": {
+                "chat_id": 662767623
+            }
+        },
+        {
+            "time": "12:10:13",
+            "type": "BOT_UPDATE",
+            "data": {
+                "update_id": 798870334,
+                "message": {
+                    "message_id": 1126,
+                    "from": {
+                        "id": 662767623,
+                        "is_bot": false,
+                        "first_name": "Damián",
+                        "username": "PerezDamian",
+                        "language_code": "es"
+                    },
+                    "chat": {
+                        "id": 662767623,
+                        "first_name": "Damián",
+                        "username": "PerezDamian",
+                        "type": "private"
+                    },
+                    "date": 1785509903,
+                    "text": "\/start",
+                    "entities": [
+                        {
+                            "offset": 0,
+                            "length": 6,
+                            "type": "bot_command"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "time": "12:10:13",
+            "type": "BOT_START",
+            "data": {
+                "chat_id": 662767623
+            }
+        },
+        {
+            "time": "12:10:13",
+            "type": "BOT_UPDATE",
+            "data": {
+                "update_id": 798870335,
+                "message": {
+                    "message_id": 1127,
+                    "from": {
+                        "id": 662767623,
+                        "is_bot": false,
+                        "first_name": "Damián",
+                        "username": "PerezDamian",
+                        "language_code": "es"
+                    },
+                    "chat": {
+                        "id": 662767623,
+                        "first_name": "Damián",
+                        "username": "PerezDamian",
+                        "type": "private"
+                    },
+                    "date": 1785509934,
+                    "text": "\/start",
+                    "entities": [
+                        {
+                            "offset": 0,
+                            "length": 6,
+                            "type": "bot_command"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "time": "12:10:14",
+            "type": "BOT_START",
+            "data": {
+                "chat_id": 662767623
+            }
+        },
+        {
+            "time": "12:10:14",
+            "type": "BOT_UPDATE",
+            "data": {
+                "update_id": 798870336,
+                "message": {
+                    "message_id": 1128,
+                    "from": {
+                        "id": 662767623,
+                        "is_bot": false,
+                        "first_name": "Damián",
+                        "username": "PerezDamian",
+                        "language_code": "es"
+                    },
+                    "chat": {
+                        "id": 662767623,
+                        "first_name": "Damián",
+                        "username": "PerezDamian",
+                        "type": "private"
+                    },
+                    "date": 1785509974,
+                    "text": "\/start",
+                    "entities": [
+                        {
+                            "offset": 0,
+                            "length": 6,
+                            "type": "bot_command"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "time": "12:10:14",
+            "type": "BOT_START",
+            "data": {
+                "chat_id": 662767623
+            }
+        },
+        {
+            "time": "12:10:14",
+            "type": "BOT_UPDATE",
+            "data": {
+                "update_id": 798870337,
+                "message": {
+                    "message_id": 1129,
+                    "from": {
+                        "id": 662767623,
+                        "is_bot": false,
+                        "first_name": "Damián",
+                        "username": "PerezDamian",
+                        "language_code": "es"
+                    },
+                    "chat": {
+                        "id": 662767623,
+                        "first_name": "Damián",
+                        "username": "PerezDamian",
+                        "type": "private"
+                    },
+                    "date": 1785510027,
+                    "text": "\/start",
+                    "entities": [
+                        {
+                            "offset": 0,
+                            "length": 6,
+                            "type": "bot_command"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "time": "12:10:15",
+            "type": "BOT_START",
+            "data": {
+                "chat_id": 662767623
+            }
+        },
+        {
+            "time": "12:10:15",
+            "type": "BOT_UPDATE",
+            "data": {
+                "update_id": 798870338,
+                "message": {
+                    "message_id": 1130,
+                    "from": {
+                        "id": 662767623,
+                        "is_bot": false,
+                        "first_name": "Damián",
+                        "username": "PerezDamian",
+                        "language_code": "es"
+                    },
+                    "chat": {
+                        "id": 662767623,
+                        "first_name": "Damián",
+                        "username": "PerezDamian",
+                        "type": "private"
+                    },
+                    "date": 1785510060,
+                    "text": "\/start",
+                    "entities": [
+                        {
+                            "offset": 0,
+                            "length": 6,
+                            "type": "bot_command"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "time": "12:10:15",
+            "type": "BOT_START",
+            "data": {
+                "chat_id": 662767623
+            }
+        },
+        {
+            "time": "12:10:15",
+            "type": "BOT_UPDATE",
+            "data": {
+                "update_id": 798870339,
+                "message": {
+                    "message_id": 1131,
+                    "from": {
+                        "id": 662767623,
+                        "is_bot": false,
+                        "first_name": "Damián",
+                        "username": "PerezDamian",
+                        "language_code": "es"
+                    },
+                    "chat": {
+                        "id": 662767623,
+                        "first_name": "Damián",
+                        "username": "PerezDamian",
+                        "type": "private"
+                    },
+                    "date": 1785510141,
+                    "text": "\/start",
+                    "entities": [
+                        {
+                            "offset": 0,
+                            "length": 6,
+                            "type": "bot_command"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "time": "12:10:15",
+            "type": "BOT_START",
+            "data": {
+                "chat_id": 662767623
+            }
+        },
+        {
+            "time": "12:10:16",
+            "type": "BOT_UPDATE",
+            "data": {
+                "update_id": 798870340,
+                "message": {
+                    "message_id": 1132,
+                    "from": {
+                        "id": 662767623,
+                        "is_bot": false,
+                        "first_name": "Damián",
+                        "username": "PerezDamian",
+                        "language_code": "es"
+                    },
+                    "chat": {
+                        "id": 662767623,
+                        "first_name": "Damián",
+                        "username": "PerezDamian",
+                        "type": "private"
+                    },
+                    "date": 1785510219,
+                    "text": "\/start",
+                    "entities": [
+                        {
+                            "offset": 0,
+                            "length": 6,
+                            "type": "bot_command"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "time": "12:10:16",
+            "type": "BOT_START",
+            "data": {
+                "chat_id": 662767623
+            }
+        },
+        {
+            "time": "12:10:16",
+            "type": "BOT_UPDATE",
+            "data": {
+                "update_id": 798870341,
+                "message": {
+                    "message_id": 1133,
+                    "from": {
+                        "id": 662767623,
+                        "is_bot": false,
+                        "first_name": "Damián",
+                        "username": "PerezDamian",
+                        "language_code": "es"
+                    },
+                    "chat": {
+                        "id": 662767623,
+                        "first_name": "Damián",
+                        "username": "PerezDamian",
+                        "type": "private"
+                    },
+                    "date": 1785510387,
+                    "text": "\/start",
+                    "entities": [
+                        {
+                            "offset": 0,
+                            "length": 6,
+                            "type": "bot_command"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "time": "12:10:16",
+            "type": "BOT_START",
+            "data": {
+                "chat_id": 662767623
+            }
+        },
+        {
+            "time": "12:10:16",
+            "type": "BOT_UPDATE",
+            "data": {
+                "update_id": 798870342,
+                "message": {
+                    "message_id": 1134,
+                    "from": {
+                        "id": 662767623,
+                        "is_bot": false,
+                        "first_name": "Damián",
+                        "username": "PerezDamian",
+                        "language_code": "es"
+                    },
+                    "chat": {
+                        "id": 662767623,
+                        "first_name": "Damián",
+                        "username": "PerezDamian",
+                        "type": "private"
+                    },
+                    "date": 1785510564,
+                    "text": "\/start",
+                    "entities": [
+                        {
+                            "offset": 0,
+                            "length": 6,
+                            "type": "bot_command"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "time": "12:10:17",
+            "type": "BOT_START",
+            "data": {
+                "chat_id": 662767623
+            }
+        }
+    ],
     "last_post": [],
     "last_senddata": [],
-    "last_update": [],
-    "updated": "2026-07-31 12:01:37"
+    "last_update": {
+        "update_id": 798870342,
+        "message": {
+            "message_id": 1134,
+            "from": {
+                "id": 662767623,
+                "is_bot": false,
+                "first_name": "Damián",
+                "username": "PerezDamian",
+                "language_code": "es"
+            },
+            "chat": {
+                "id": 662767623,
+                "first_name": "Damián",
+                "username": "PerezDamian",
+                "type": "private"
+            },
+            "date": 1785510564,
+            "text": "\/start",
+            "entities": [
+                {
+                    "offset": 0,
+                    "length": 6,
+                    "type": "bot_command"
+                }
+            ]
+        }
+    },
+    "updated": "2026-07-31 12:10:17"
 }
