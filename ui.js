@@ -176,9 +176,11 @@ static response(r) {
             !tg.initDataUnsafe ||
             !tg.initDataUnsafe.query_id
         ) {
-            alert('No se detecta query_id en initDataUnsafe. Asegúrate de que la app esté abierta desde Telegram y no desde un navegador externo.');
+            alert('No se detecta query_id en initDataUnsafe. Asegúrate de que la app esté abierta desde Telegram y no desde un navegador externo.');            
         }
-        alert('Accediendo a datos de Telegram. Revisa la consola para más detalles.');
+        else {
+            alert('Accediendo a datos de Telegram. Revisa la consola para más detalles.');
+        }
         const u = tg.initDataUnsafe.user || {};
         this.set("tg_id", u.id || "");
         this.set("tg_name",
