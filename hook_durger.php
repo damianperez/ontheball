@@ -72,18 +72,12 @@ try {
         State::event(
             "SEND_DATA",
             [
-                "chat_id" =>
-                $update["message"]["chat"]["id"],
-                "payload" =>
-                $data
+                "chat_id" =>        $update["message"]["chat"]["id"],
+                "payload" =>        $data
             ]
         );
         State::save();
-        Logger::json(
-            "SEND_DATA recibido",
-            $data,
-            BOT_LOG
-        );
+        Logger::json("SEND_DATA recibido",$data,BOT_LOG);
     /*
     Respuesta opcional al usuario
     */
@@ -127,15 +121,9 @@ try {
     |--------------------------------------------------------------------------
     */
     State::load();
-    State::set(
-        "last_update",
-        $update
-    );
-    State::event(
-        "BOT_UPDATE",
-        $update
-    );
-    State::save();
+    State::set( "last_update",        $update    );
+    State::event("BOT_UPDATE",        $update    );
+    State::save();      
     /*
     |--------------------------------------------------------------------------
     | Procesar mensaje
@@ -170,14 +158,7 @@ try {
         | Comando START
         |--------------------------------------------------------------------------
         */
-
-        
         // Create the inline keyboard and add a row of buttons
-       
-        
-     
-        
-
         if ($text == "/start") {
             $keyboard = [
                 "inline_keyboard" => [
@@ -236,13 +217,9 @@ try {
     |--------------------------------------------------------------------------
     */
     $ms =
-        Logger::timerEnd(
-            $start
-        );
-    $debug[] =
-        "Tiempo " . $ms . " ms";
-    jsonResponse(
-        true,
+        Logger::timerEnd( $start   );
+    $debug[] =  "Tiempo " . $ms . " ms";
+    jsonResponse(   true,
         [
             "received" => true,
             "elapsed_ms" => $ms
