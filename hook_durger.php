@@ -1,5 +1,4 @@
 <?php
-
 /**
  * ==========================================================
  * Telegram WebApp Debug Studio
@@ -9,21 +8,16 @@
  * Webhook receptor Telegram
  * ==========================================================
  */
-
 declare(strict_types=1);
-
 require_once "config.php";
 $BOT_TOKEN = getenv('BOT_TOKEN') ?: '1618069377:AAGPFW-KGu-vCN0xUudrK6FRqWdD3AizrSc';
 $BOT_API = getenv('BOT_API') ?: 'https://api.telegram.org/bot' . $BOT_TOKEN . '/';
 $WEBAPP_URL = getenv('WEBAPP_URL') ?: 'https://bots.perezcompany.com.ar/ontheball/';
-
 //require_once "config_durger.php";
 require_once "logger.php";
 require_once "state.php";
 require_once "telegram_client.php";
-
 $debug = [];
-
 try {
     $start = Logger::timerStart();
     /*
@@ -53,7 +47,6 @@ try {
     echo "<pre>";
     print_r($update);
     echo "</pre>";
-
     exit;
     */
     if (!$update) {
@@ -75,7 +68,6 @@ try {
         if (!$data) {
             $data = ["raw" => $raw];
         }
-
         State::load();
         State::event(
             "SEND_DATA",
@@ -99,26 +91,15 @@ try {
             $update["message"]["chat"]["id"],
             'recibido: ' . var_export($data, true),
             [
-                "reply_markup" =>
-                json_encode(
+                "reply_markup" =>json_encode(
                     [
-                        "inline_keyboard" => [
-                            [
-                                [
-                                    "text" => "✅ OK",
-                                    "callback_data" => "ok"
-                                ]
-                            ]
-                        ]
+                        "inline_keyboard" => [[[    "text" => "✅ OK",    "callback_data" => "ok"]]]
                     ]
                 )
             ]
             //"✅ SendData recibido correctamente:".var_export($data, true)
             /*
-            
-            
-            
-            Si viene 'Nativo, viene : 
+                Si viene 'Nativo, viene : 
                      array (
                         'time' => '2026-07-27T15:17:29.179Z',
                         'telegram' => 
@@ -135,31 +116,26 @@ try {
                             'mensaje' => 'd',
                         ),
                         'origin' => 'sendData',
-                        )
-                                    */
+                        )    */
         );
     }
     $debug[] = "Updatee recibido";
+    $debug[] = var_export($update, true);
     /*
     |--------------------------------------------------------------------------
     | Guardar evento
     |--------------------------------------------------------------------------
     */
-
     State::load();
-
     State::set(
         "last_update",
         $update
     );
-
     State::event(
         "BOT_UPDATE",
         $update
     );
-
     State::save();
-
     /*
     |--------------------------------------------------------------------------
     | Procesar mensaje
@@ -173,36 +149,27 @@ try {
             "SEND_DATA",
             ["data" => $sendData]
         );
-
         State::save();
-
         Logger::json(
             "SEND_DATA recibido",
             $sendData,
             BOT_LOG
         );
     }
-
     if (isset($update["message"])) {
-
         $message = $update["message"];
-
         $chat_id = $message["chat"]["id"];
-
         $text = $message["text"] ?? "";
-
         Logger::info(
             "Mensaje BOT",
             $message,
             BOT_LOG
         );
-
         /*
         |--------------------------------------------------------------------------
         | Comando START
         |--------------------------------------------------------------------------
         */
-
 
         
         // Create the inline keyboard and add a row of buttons
@@ -211,16 +178,13 @@ try {
      
         
 
-
         if ($text == "/start") {
-
             $keyboard = [
                 "inline_keyboard" => [
                     [
                         [
                             "text" => "🚀 Abrir Studio",
-                            "web_app" => [
-                                "url" => WEBAPP_URL
+                            "web_app" => ["url" => WEBAPP_URL
                             ]
                         ]
                     ]
@@ -229,21 +193,17 @@ try {
             ];
 
 
-
-
             $keyboard = [ 
                 "inline_keyboard" => [
                    [
                     ["text" => "🚀 Abrir Studio", "web_app" => ["url" => WEBAPP_URL]],
                      ["text" => "App", "web_app" => ["url" => "https://bots.perezcompany.com.ar/durger-king/public"]],
                     ["text" => "Demo", "web_app" => ["url" => "https://bots.perezcompany.com.ar/durger-king/public/demo.php"]]    
-
                  ]
                 ],
                 "resize_keyboard" => true,
             ]
                 ;
-
             TelegramClient::sendMessage(
                 $chat_id,
                 "Abrir Debug Studio",
@@ -252,17 +212,14 @@ try {
                     json_encode($keyboard)
                 ]
             );
-
             State::event(
                 "BOT_START",
                 [
                     "chat_id" => $chat_id
                 ]
             );
-
             State::save();
         } else {
-
             State::event(
                 "BOT_MESSAGE",
                 [
@@ -270,25 +227,20 @@ try {
                     "text" => $text
                 ]
             );
-
             State::save();
         }
     }
-
     /*
     |--------------------------------------------------------------------------
     | Tiempo
     |--------------------------------------------------------------------------
     */
-
     $ms =
         Logger::timerEnd(
             $start
         );
-
     $debug[] =
         "Tiempo " . $ms . " ms";
-
     jsonResponse(
         true,
         [
@@ -298,9 +250,7 @@ try {
         $debug
     );
 } catch (Throwable $e) {
-
     Logger::exception($e);
-
     jsonResponse(
         false,
         [
