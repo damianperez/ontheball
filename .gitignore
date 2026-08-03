@@ -4,5 +4,6 @@ vendor/
 /logs/
 logs/
 data/
-estado.json
+/data/
+data/estado.json
 #Config.php
