@@ -51,7 +51,7 @@ try {
     */
     if (!$update) {
         throw new Exception(
-            "Update inválido"
+            "Update durger inválido"
         );
     }
     /*
