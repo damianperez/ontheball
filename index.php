@@ -225,7 +225,7 @@ readonly></textarea>
 
 <td>BOT API</td>
 
-<td><?= BOT_API ?></td>
+<td><?= $BOT_API ?></td>
 
 </tr>
 

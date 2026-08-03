@@ -24,7 +24,7 @@ class TelegramClient
 
         $start = Logger::timerStart();
 
-        $url = BOT_API . $method;
+        $url = $BOT_API . $method;
 
         Logger::info(
             "Telegram REQUEST ".$method,

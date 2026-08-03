@@ -14,14 +14,10 @@ date_default_timezone_set('America/Argentina/Buenos_Aires');
 | Telegram
 |--------------------------------------------------------------------------
 */
-define(
-    "APP_VERSION",
-    "1.0.0"
-);
+define("APP_VERSION",    "1.0.0");
 
 define('BOT_TOKEN', '963731201:AAGphSbD-uU_s93Xx1y6z2b8ULEE9YTJr88');
-define(
-    'BOT_API',
+define('BOT_API',
     'https://api.telegram.org/bot' . BOT_TOKEN . '/'
 );
 define(

@@ -18,15 +18,21 @@ define(
     "APP_VERSION",
     "1.0.0"
 );
-define('BOT_TOKEN', '1618069377:AAGPFW-KGu-vCN0xUudrK6FRqWdD3AizrSc');
+
+$BOT_TOKEN = '1618069377:AAGPFW-KGu-vCN0xUudrK6FRqWdD3AizrSc'; // Default token if not set in environment
+$BOT_API = 'https://api.telegram.org/bot' . $BOT_TOKEN . '/';
+$WEBAPP_URL = 'https://bots.perezcompany.com.ar/ontheball/';
+//define('BOT_TOKEN', $BOT_TOKEN);
+/*
 define(
     'BOT_API',
-    'https://api.telegram.org/bot' . BOT_TOKEN . '/'
+    'https://api.telegram.org/bot' . $BOT_TOKEN . '/'
 );
 define(
     'WEBAPP_URL',
     'https://bots.perezcompany.com.ar/ontheball/'
 );
+*/
 /*
 |--------------------------------------------------------------------------
 | Proyecto
