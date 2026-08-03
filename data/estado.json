@@ -389,37 +389,77 @@
             "data": {
                 "chat_id": 662767623
             }
+        },
+        {
+            "time": "11:24:18",
+            "type": "BOT_UPDATE",
+            "data": {
+                "order_data": "[{\"id\":2,\"count\":3}]",
+                "comment": "",
+                "mode": "menu",
+                "invoice": 1,
+                "_auth": "query_id=AAEHCIEnAAAAAAcIgSf5RsGn&user=%7B%22id%22%3A662767623%2C%22first_name%22%3A%22Dami%C3%A1n%22%2C%22last_name%22%3A%22%22%2C%22username%22%3A%22PerezDamian%22%2C%22language_code%22%3A%22es%22%2C%22allows_write_to_pm%22%3Atrue%2C%22photo_url%22%3A%22https%3A%5C%2F%5C%2Ft.me%5C%2Fi%5C%2Fuserpic%5C%2F320%5C%2FP3a2zzEGYAcXB3ZanpskiS58EhW8UKFJLDuip6tS6H0.svg%22%7D&auth_date=1785762127&signature=AKX1Y8dRgsuaFJBkZcyjh3hRZlbCHEjPMQiqW1ZOcxlYqX6ygIsDod4_9hioWx-9DFuqaXxPx60xh6lwX2xwDg&hash=a54f9994680ad909dd36bc03f5356356396484856968e3edfee0ad2f11896106",
+                "method": "makeOrder"
+            }
+        },
+        {
+            "time": "11:26:45",
+            "type": "BOT_UPDATE",
+            "data": {
+                "order_data": "[{\"id\":2,\"count\":3}]",
+                "comment": "",
+                "mode": "menu",
+                "invoice": 1,
+                "_auth": "query_id=AAEHCIEnAAAAAAcIgSf5RsGn&user=%7B%22id%22%3A662767623%2C%22first_name%22%3A%22Dami%C3%A1n%22%2C%22last_name%22%3A%22%22%2C%22username%22%3A%22PerezDamian%22%2C%22language_code%22%3A%22es%22%2C%22allows_write_to_pm%22%3Atrue%2C%22photo_url%22%3A%22https%3A%5C%2F%5C%2Ft.me%5C%2Fi%5C%2Fuserpic%5C%2F320%5C%2FP3a2zzEGYAcXB3ZanpskiS58EhW8UKFJLDuip6tS6H0.svg%22%7D&auth_date=1785762127&signature=AKX1Y8dRgsuaFJBkZcyjh3hRZlbCHEjPMQiqW1ZOcxlYqX6ygIsDod4_9hioWx-9DFuqaXxPx60xh6lwX2xwDg&hash=a54f9994680ad909dd36bc03f5356356396484856968e3edfee0ad2f11896106",
+                "method": "makeOrder"
+            }
+        },
+        {
+            "time": "11:26:53",
+            "type": "BOT_UPDATE",
+            "data": {
+                "order_data": "[{\"id\":2,\"count\":3}]",
+                "comment": "",
+                "mode": "menu",
+                "invoice": 1,
+                "_auth": "query_id=AAEHCIEnAAAAAAcIgSf5RsGn&user=%7B%22id%22%3A662767623%2C%22first_name%22%3A%22Dami%C3%A1n%22%2C%22last_name%22%3A%22%22%2C%22username%22%3A%22PerezDamian%22%2C%22language_code%22%3A%22es%22%2C%22allows_write_to_pm%22%3Atrue%2C%22photo_url%22%3A%22https%3A%5C%2F%5C%2Ft.me%5C%2Fi%5C%2Fuserpic%5C%2F320%5C%2FP3a2zzEGYAcXB3ZanpskiS58EhW8UKFJLDuip6tS6H0.svg%22%7D&auth_date=1785762127&signature=AKX1Y8dRgsuaFJBkZcyjh3hRZlbCHEjPMQiqW1ZOcxlYqX6ygIsDod4_9hioWx-9DFuqaXxPx60xh6lwX2xwDg&hash=a54f9994680ad909dd36bc03f5356356396484856968e3edfee0ad2f11896106",
+                "method": "makeOrder"
+            }
+        },
+        {
+            "time": "11:50:22",
+            "type": "BOT_UPDATE",
+            "data": {
+                "order_data": "[{\"id\":2,\"count\":3}]",
+                "comment": "",
+                "mode": "menu",
+                "invoice": 1,
+                "_auth": "query_id=AAEHCIEnAAAAAAcIgSf5RsGn&user=%7B%22id%22%3A662767623%2C%22first_name%22%3A%22Dami%C3%A1n%22%2C%22last_name%22%3A%22%22%2C%22username%22%3A%22PerezDamian%22%2C%22language_code%22%3A%22es%22%2C%22allows_write_to_pm%22%3Atrue%2C%22photo_url%22%3A%22https%3A%5C%2F%5C%2Ft.me%5C%2Fi%5C%2Fuserpic%5C%2F320%5C%2FP3a2zzEGYAcXB3ZanpskiS58EhW8UKFJLDuip6tS6H0.svg%22%7D&auth_date=1785762127&signature=AKX1Y8dRgsuaFJBkZcyjh3hRZlbCHEjPMQiqW1ZOcxlYqX6ygIsDod4_9hioWx-9DFuqaXxPx60xh6lwX2xwDg&hash=a54f9994680ad909dd36bc03f5356356396484856968e3edfee0ad2f11896106",
+                "method": "makeOrder"
+            }
+        },
+        {
+            "time": "11:50:40",
+            "type": "BOT_UPDATE",
+            "data": {
+                "order_data": "[{\"id\":2,\"count\":3}]",
+                "comment": "",
+                "mode": "menu",
+                "invoice": 1,
+                "_auth": "query_id=AAEHCIEnAAAAAAcIgSf5RsGn&user=%7B%22id%22%3A662767623%2C%22first_name%22%3A%22Dami%C3%A1n%22%2C%22last_name%22%3A%22%22%2C%22username%22%3A%22PerezDamian%22%2C%22language_code%22%3A%22es%22%2C%22allows_write_to_pm%22%3Atrue%2C%22photo_url%22%3A%22https%3A%5C%2F%5C%2Ft.me%5C%2Fi%5C%2Fuserpic%5C%2F320%5C%2FP3a2zzEGYAcXB3ZanpskiS58EhW8UKFJLDuip6tS6H0.svg%22%7D&auth_date=1785762127&signature=AKX1Y8dRgsuaFJBkZcyjh3hRZlbCHEjPMQiqW1ZOcxlYqX6ygIsDod4_9hioWx-9DFuqaXxPx60xh6lwX2xwDg&hash=a54f9994680ad909dd36bc03f5356356396484856968e3edfee0ad2f11896106",
+                "method": "makeOrder"
+            }
         }
     ],
     "last_post": [],
     "last_senddata": [],
     "last_update": {
-        "update_id": 798870342,
-        "message": {
-            "message_id": 1134,
-            "from": {
-                "id": 662767623,
-                "is_bot": false,
-                "first_name": "Damián",
-                "username": "PerezDamian",
-                "language_code": "es"
-            },
-            "chat": {
-                "id": 662767623,
-                "first_name": "Damián",
-                "username": "PerezDamian",
-                "type": "private"
-            },
-            "date": 1785510564,
-            "text": "\/start",
-            "entities": [
-                {
-                    "offset": 0,
-                    "length": 6,
-                    "type": "bot_command"
-                }
-            ]
-        }
+        "order_data": "[{\"id\":2,\"count\":3}]",
+        "comment": "",
+        "mode": "menu",
+        "invoice": 1,
+        "_auth": "query_id=AAEHCIEnAAAAAAcIgSf5RsGn&user=%7B%22id%22%3A662767623%2C%22first_name%22%3A%22Dami%C3%A1n%22%2C%22last_name%22%3A%22%22%2C%22username%22%3A%22PerezDamian%22%2C%22language_code%22%3A%22es%22%2C%22allows_write_to_pm%22%3Atrue%2C%22photo_url%22%3A%22https%3A%5C%2F%5C%2Ft.me%5C%2Fi%5C%2Fuserpic%5C%2F320%5C%2FP3a2zzEGYAcXB3ZanpskiS58EhW8UKFJLDuip6tS6H0.svg%22%7D&auth_date=1785762127&signature=AKX1Y8dRgsuaFJBkZcyjh3hRZlbCHEjPMQiqW1ZOcxlYqX6ygIsDod4_9hioWx-9DFuqaXxPx60xh6lwX2xwDg&hash=a54f9994680ad909dd36bc03f5356356396484856968e3edfee0ad2f11896106",
+        "method": "makeOrder"
     },
-    "updated": "2026-07-31 12:10:17"
+    "updated": "2026-08-03 11:50:40"
 }
