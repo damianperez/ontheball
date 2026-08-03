@@ -139,9 +139,7 @@ try {
                                     */
         );
     }
-
-    $debug[] = "Update recibido";
-
+    $debug[] = "Updatee recibido";
     /*
     |--------------------------------------------------------------------------
     | Guardar evento
