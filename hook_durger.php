@@ -17,7 +17,6 @@ $BOT_TOKEN = getenv('BOT_TOKEN') ?: '1618069377:AAGPFW-KGu-vCN0xUudrK6FRqWdD3Aiz
 $BOT_API = getenv('BOT_API') ?: 'https://api.telegram.org/bot' . $BOT_TOKEN . '/';
 $WEBAPP_URL = getenv('WEBAPP_URL') ?: 'https://bots.perezcompany.com.ar/ontheball/';
 
-
 //require_once "config_durger.php";
 require_once "logger.php";
 require_once "state.php";
@@ -26,7 +25,6 @@ require_once "telegram_client.php";
 $debug = [];
 
 try {
-
     $start = Logger::timerStart();
     /*
     |--------------------------------------------------------------------------
