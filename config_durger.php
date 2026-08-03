@@ -94,7 +94,11 @@ if (!file_exists(STATE_FILE)) {
 | Respuesta JSON estándar
 |--------------------------------------------------------------------------
 */
+/*
+Telegram WebApp ,js no sacarla de Telegram
+Sobreescribir Webapp.openInvoice para que devuelva un JSON con la URL de la factura
 
+*/
 function jsonResponseDurger(
     bool $ok,
     mixed $data = null,

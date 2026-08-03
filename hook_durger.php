@@ -147,7 +147,7 @@ try {
     if (isset($update["message"])) {
         $message = $update["message"];
         $chat_id = $message["chat"]["id"];
-        $text = $message["text"] ?? "";
+        $text = $message["text"] ?? "xxx";
         Logger::info(
             "Mensaje BOT",
             $message,
@@ -219,17 +219,18 @@ try {
     $ms =
         Logger::timerEnd( $start   );
     $debug[] =  "Tiempo " . $ms . " ms";
-    jsonResponse(   true,
+    //REspondo via Json
+    jsonResponseDurger( true, $update, $debug, 200);
+   /* jsonResponse(   true,
         [
             "received" => true,
             "elapsed_ms" => $ms
         ],
         $debug
-    );
+    );*/
 } catch (Throwable $e) {
     Logger::exception($e);
-    jsonResponse(
-        false,
+    jsonResponse(     false,
         [
             "error" =>
             $e->getMessage()
@@ -237,4 +238,24 @@ try {
         $debug,
         500
     );
+}
+function jsonResponseDurger( bool $ok, mixed $data = null, array $debug = [], int $http = 200): never 
+{
+    http_response_code($http);
+    header('Content-Type: application/json; charset=utf-8');
+    echo json_encode(
+        [
+            "ok" => $ok,
+            "order_id" => $data['order_id'] ?? 9999,
+            "invoice_url" => $data['invoice_url'] ?? 'http://eldia.com.ar',
+            "error" => $data['error'] ?? 'Sin error',
+            "time" => date('Y-m-d H:i:s'),
+            "memory" => memory_get_usage(true),
+            "php" => PHP_VERSION,
+            "data" => $data,
+            "debug" => $debug
+        ],
+        JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE
+    );
+    exit;
 }
