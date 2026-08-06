@@ -246,10 +246,16 @@ function jsonResponseDurger( bool $ok, mixed $data = null, array $debug = [], in
     echo json_encode(
         [
             "ok" => $ok,
-            "DATA" => $data,
+            
             "debug" => $debug,
+            "recibido" => [
+                "DATA" => $data,
+                "comment" => $data["comment"],
+                "method" => $data["method"],
+                "mode" => $data["mode"],
+                ],
            "order_id" => $data['order_id'] ?? (9999 + random_int(1, 10)),
-            "invoice_url" => $data['invoice_url'] ?? 'http://eldia.com.ar?order_id=' . ($data['order_id'] ?? 'error'), 
+           "invoice_url" => $data['invoice_url'] ?? 'http://eldia.com.ar?order_id=' . ($data['order_id'] ?? 'error'), 
 
             "error" => $data['error'] ?? 'Sin error',
             "time" => date('Y-m-d H:i:s'),
