@@ -99,7 +99,7 @@ Telegram WebApp ,js no sacarla de Telegram
 Sobreescribir Webapp.openInvoice para que devuelva un JSON con la URL de la factura
 
 */
-function jsonResponseDurger(
+function jsonResponse2Durger(
     bool $ok,
     mixed $data = null,
     array $debug = [],
