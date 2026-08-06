@@ -246,7 +246,7 @@ function jsonResponseDurger( bool $ok, mixed $data = null, array $debug = [], in
     echo json_encode(
         [
             "ok" => $ok,
-            "order_id" => $data['order_id'] ?? 9999,
+            "order_id" => $data['order_id'] ?? 9998,
             "invoice_url" => $data['invoice_url'] ?? 'http://eldia.com.ar',
             "error" => $data['error'] ?? 'Sin error',
             "time" => date('Y-m-d H:i:s'),
