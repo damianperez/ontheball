@@ -259,7 +259,7 @@ function jsonResponseDurger( bool $ok, mixed $data = null, array $debug = [], in
            "order_id" => $data['order_id'] ?? (9999 + random_int(1, 10)),
            "invoice_url" => $data['invoice_url'] ?? 'http://eldia.com.ar?order_id=' . ($data['order_id'] ?? 'error'), 
 
-            "error" => $data['error'] ?? 'Sin error',
+            "error" => false,
             "time" => date('Y-m-d H:i:s'),
             "memory" => memory_get_usage(true),
             "php" => PHP_VERSION,
