@@ -243,6 +243,18 @@ function jsonResponseDurger( bool $ok, mixed $data = null, array $debug = [], in
 {
     http_response_code($http);
     header('Content-Type: application/json; charset=utf-8');
+    //[{id: 1, count: 3}, {id: 2, count: 4}, {id: 8, count: 6}, {id: 9, count: 2}]
+    $data['order_id']='';
+    $items_pedidos = json_decode($data["order_data"], true) ?? [];
+    foreach ($items_pedidos as $index => $item) {
+        if (isset($item["id"])) {
+            $data['order_id'] .= $item["id"] . $item["count"] ?? 1 ;
+        }        
+        }
+    }
+    //[{id: 1, count: 3}, {id: 2, count: 4}, {id: 8, count: 6}, {id: 9, count: 2}]
+
+
     echo json_encode(
         [
             "ok" => $ok,
@@ -253,12 +265,12 @@ function jsonResponseDurger( bool $ok, mixed $data = null, array $debug = [], in
                 "comment" => $data["comment"],
                 "method" => $data["method"],
                 "mode" => $data["mode"],
-                "order_data" => json_decode($data["order_data"], true) ?? [],
+                "order_data" => $items_pedidos,
                
                 ],
            "order_id" => $data['order_id'] ?? (9999 + random_int(1, 10)),
            "invoice_url" => $data['invoice_url'] ?? 'http://eldia.com.ar?order_id=' . ($data['order_id'] ?? 'error'), 
-
+            "respuesta" => "Gracias por tu pedido, estamos procesando tu orden de ".count($items_pedidos)." items.",
             "error" => false,
             "time" => date('Y-m-d H:i:s'),
             "memory" => memory_get_usage(true),
