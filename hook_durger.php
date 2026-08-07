@@ -115,11 +115,7 @@ try {
     }
     $debug[] = "Updatee recibido";
     $debug[] = var_export($update, true);
-    /*
-    |--------------------------------------------------------------------------
-    | Guardar evento
-    |--------------------------------------------------------------------------
-    */
+    /* Guardar evento    */
     State::load();
     State::set( "last_update",        $update    );
     State::event("BOT_UPDATE",        $update    );
@@ -133,16 +129,9 @@ try {
         $rawData = $update["message"]["web_app_data"]["data"];
         $sendData =  json_decode($rawData, true);
         State::load();
-        State::event(
-            "SEND_DATA",
-            ["data" => $sendData]
-        );
+        State::event("SEND_DATA",["data" => $sendData]);
         State::save();
-        Logger::json(
-            "SEND_DATA recibido",
-            $sendData,
-            BOT_LOG
-        );
+        Logger::json("SEND_DATA recibido",$sendData,BOT_LOG);
     }
     if (isset($update["message"])) {
         $message = $update["message"];
@@ -201,44 +190,50 @@ try {
             );
             State::save();
         } else {
-            State::event(
-                "BOT_MESSAGE",
-                [
-                    "chat_id" => $chat_id,
-                    "text" => $text
-                ]
-            );
+            State::event("BOT_MESSAGE",["chat_id" => $chat_id,"text" => $text]);
             State::save();
         }
     }
-    /*
-    |--------------------------------------------------------------------------
-    | Tiempo
-    |--------------------------------------------------------------------------
-    */
-    $ms =
-        Logger::timerEnd( $start   );
+    $ms =Logger::timerEnd( $start   );
     $debug[] =  "Tiempo " . $ms . " ms";
     //REspondo via Json
-    jsonResponseDurger( true, $update, $debug, 200);
-   /* jsonResponse(   true,
-        [
-            "received" => true,
-            "elapsed_ms" => $ms
-        ],
-        $debug
-    );*/
+    ResponseDurger( true, $update, $debug, 200);
+    
 } catch (Throwable $e) {
     Logger::exception($e);
-    jsonResponse(     false,
-        [
-            "error" =>
-            $e->getMessage()
-        ],
-        $debug,
-        500
-    );
+    jsonResponse(false,[ "error" =>  $e->getMessage()],     $debug, 500);
 }
+
+
+function ResponseDurger( bool $ok, mixed $data = null, array $debug = [], int $http = 200)
+{
+    if (!is_array($data) || !isset($data["method"]) || !isset($data["mode"])) {
+        $ok = false;    
+        http_response_code($http);
+        header('Content-Type: application/json; charset=utf-8');
+        echo json_encode(        [
+            "ok" => $ok,
+            "data" => $data,
+            "error" => "the data must be an array with 'method' and 'mode' keys",
+            "time" => date('Y-m-d H:i:s'),
+            "memory" => memory_get_usage(true),
+            "php" => PHP_VERSION,
+            "debug" => $debug
+        ],  JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE    );
+        exit;
+        }
+   if ( $data["method"] === "makeOrder" && $data["mode"] === "pedidosnet" )
+    {
+        jsonResponseDurger( $ok, $data, $debug, $http);
+    } elseif ( $data["method"] === "makeOrder" && $data["mode"] === "durger" ){
+        jsonResponse( $ok, $data, $debug, $http);
+    }
+    
+}
+
+
+
+
 function jsonResponseDurger( bool $ok, mixed $data = null, array $debug = [], int $http = 200): never 
 {
     http_response_code($http);
@@ -250,23 +245,18 @@ function jsonResponseDurger( bool $ok, mixed $data = null, array $debug = [], in
         if (isset($item["id"])) {
             $data['order_id'] .= $item["id"] . $item["count"] ?? 1 ;
         }        
-    }
-    
+    }    
     //[{id: 1, count: 3}, {id: 2, count: 4}, {id: 8, count: 6}, {id: 9, count: 2}]
-
-
     echo json_encode(
         [
-            "ok" => $ok,
-            
+            "ok" => $ok,            
             "debug" => $debug,
             "recibido" => [
                 "DATA" => $data,
                 "comment" => $data["comment"],
                 "method" => $data["method"],
                 "mode" => $data["mode"],
-                "order_data" => $items_pedidos,
-               
+                "order_data" => $items_pedidos,               
                 ],
            "order_id" => $data['order_id'] ?? (9999 + random_int(1, 10)),
            "invoice_url" => $data['invoice_url'] ?? 'http://eldia.com.ar?order_id=' . ($data['order_id'] ?? 'error'), 
@@ -274,8 +264,7 @@ function jsonResponseDurger( bool $ok, mixed $data = null, array $debug = [], in
             "error" => false,
             "time" => date('Y-m-d H:i:s'),
             "memory" => memory_get_usage(true),
-            "php" => PHP_VERSION,
-            "data" => $data,
+            "php" => PHP_VERSION,            
             "debug" => $debug
         ],
         JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE
