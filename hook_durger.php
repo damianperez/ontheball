@@ -250,8 +250,8 @@ function jsonResponseDurger( bool $ok, mixed $data = null, array $debug = [], in
         if (isset($item["id"])) {
             $data['order_id'] .= $item["id"] . $item["count"] ?? 1 ;
         }        
-        }
     }
+    
     //[{id: 1, count: 3}, {id: 2, count: 4}, {id: 8, count: 6}, {id: 9, count: 2}]
 
 
