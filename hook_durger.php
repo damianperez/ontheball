@@ -246,6 +246,7 @@ function jsonResponseDurger( bool $ok, mixed $data = null, array $debug = [], in
             $data['order_id'] .= $item["id"] . $item["count"] ?? 1 ;
         }        
     }    
+    $order_text = parseOrder($data["order_data"]);
     //[{id: 1, count: 3}, {id: 2, count: 4}, {id: 8, count: 6}, {id: 9, count: 2}]
     echo json_encode(
         [
@@ -260,7 +261,7 @@ function jsonResponseDurger( bool $ok, mixed $data = null, array $debug = [], in
                 ],
            "order_id" => $data['order_id'] ?? (9999 + random_int(1, 10)),
            "invoice_url" => $data['invoice_url'] ?? 'http://eldia.com.ar?order_id=' . ($data['order_id'] ?? 'error'), 
-            "respuesta" => "Gracias por tu pedido, estamos procesando tu orden de ".count($items_pedidos)." items.",
+            "respuesta" => $order_text,
             "error" => false,
             "time" => date('Y-m-d H:i:s'),
             "memory" => memory_get_usage(true),
@@ -271,3 +272,105 @@ function jsonResponseDurger( bool $ok, mixed $data = null, array $debug = [], in
     );
     exit;
 }
+
+ function parseOrder(string $order = '[]'): string
+    {
+        if ($order == '[]') {
+            return 'Nothing';
+        }
+
+        $order = json_decode($order, true);
+        $order_text = '';
+        $store_items = precios();
+        foreach ($order as $item) {
+            $order_text .= (
+                $item['count'] . 'x ' .
+                $store_items[$item['id']]['name'] . ' ' .
+                $store_items[$item['id']]['emoji'] . ' $' .
+                ($store_items[$item['id']]['price'] * $item['count']) . "\n"
+            );
+        }
+        return $order_text;
+    }
+
+    function precios()
+    {
+    return [
+        1 => [
+            'name' => 'Burger',
+            'emoji' => '🍔',
+            'price' => 5,
+        ],
+        2 => [
+            'name' => 'Fries',
+            'emoji' => '🍟',
+            'price' => 2,
+        ],
+        3 => [
+            'name' => 'Drink',
+            'emoji' => '🥤',
+            'price' => 1,
+        ],
+        4 => [
+            'name' => 'Salad',
+            'emoji' => '🥗',
+            'price' => 3,
+        ],
+        5 => [
+            'name' => 'Pizza',
+            'emoji' => '🍕',
+            'price' => 4,
+        ],
+        6 => [
+            'name' => 'Sandwich',
+            'emoji' => '🥪',
+            'price' => 3,
+        ],
+        7 => [
+            'name' => 'Hot Dog',
+            'emoji' => '🌭',
+            'price' => 2,
+        ],
+        8 => [
+            'name' => 'Ice Cream',
+            'emoji' => '🍦',
+            'price' => 2,
+        ],
+        9 => [
+            'name' => 'Cake',
+            'emoji' => '🍰',
+            'price' => 3,
+        ],
+        10 => [
+            'name' => 'Donut',
+            'emoji' => '🍩',
+            'price' => 1,
+        ],
+        11 => [
+            'name' => 'Cupcake',
+            'emoji' => '🧁',
+            'price' => 1,
+        ],
+        12 => [
+            'name' => 'Cookie',
+            'emoji' => '🍪',
+            'price' => 1,
+        ],
+        13 => [
+            'name' => 'Sushi',
+            'emoji' => '🍣',
+            'price' => 4,
+        ],
+        14 => [
+            'name' => 'Noodles',
+            'emoji' => '🍜',
+            'price' => 3,
+        ],
+        15 => [
+            'name' => 'Steak',
+            'emoji' => '🥩',
+            'price' => 5,
+        ],
+    ];
+    }
+    
