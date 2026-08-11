@@ -295,6 +295,7 @@ function jsonResponseDurger( bool $ok, mixed $data = null, array $debug = [], in
 
 function precios()
 {
+     //<div class="cafe-item js-item" data-item-id="1" data-item-price="4990">
     return $products = [
     1 => [
         'name' => 'Burger',
