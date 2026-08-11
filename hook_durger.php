@@ -295,6 +295,68 @@ function jsonResponseDurger( bool $ok, mixed $data = null, array $debug = [], in
 
 function precios()
 {
+    return $products = [
+    1 => [
+        'name' => 'Burger',
+        'emoji' => '🍔',
+        'price' => 4.99,
+    ],
+    2 => [
+        'name' => 'Fries',
+        'emoji' => '🍟',
+        'price' => 1.49,
+    ],
+    3 => [
+        'name' => 'Hotdog',
+        'emoji' => '🌭',
+        'price' => 3.49,
+    ],
+    4 => [
+        'name' => 'Tako',
+        'emoji' => '🌮',
+        'price' => 3.99,
+    ],
+    5 => [
+        'name' => 'Pizza',
+        'emoji' => '🍕',
+        'price' => 7.99,
+    ],
+    6 => [
+        'name' => 'Donut',
+        'emoji' => '🍩',
+        'price' => 1.49,
+    ],
+    7 => [
+        'name' => 'Popcorn',
+        'emoji' => '🍿',
+        'price' => 1.99,
+    ],
+    8 => [
+        'name' => 'Coke',
+        'emoji' => '🥤',
+        'price' => 1.49,
+    ],
+    9 => [
+        'name' => 'Cake',
+        'emoji' => '🍰',
+        'price' => 10.99,
+    ],
+    10 => [
+        'name' => 'Icecream',
+        'emoji' => '🍦',
+        'price' => 5.99,
+    ],
+    11 => [
+        'name' => 'Cookie',
+        'emoji' => '🍪',
+        'price' => 3.99,
+    ],
+    12 => [
+        'name' => 'Flan',
+        'emoji' => '🍮',
+        'price' => 7.99,
+    ],
+];
 
     return json_decode( 
    '[
