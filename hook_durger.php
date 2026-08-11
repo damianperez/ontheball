@@ -286,7 +286,7 @@ function jsonResponseDurger( bool $ok, mixed $data = null, array $debug = [], in
             $order_text .= (
                 $item['count'] . 'x ' .
                 $store_items[$item['id']]['name'] . ' ' .
-                $store_items[$item['id']]['emoji'] . ' $' .                 
+                $store_items[$item['id']]['emoji'] . ' $' .
                 ($store_items[$item['id']]['price'] * $item['count']) . "\n"
             );
         }
