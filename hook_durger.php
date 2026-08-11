@@ -293,84 +293,82 @@ function jsonResponseDurger( bool $ok, mixed $data = null, array $debug = [], in
         return $order_text;
     }
 
-    function precios()
-    {
-    return [
-        1 => [
-            'name' => 'Burger',
-            'emoji' => '🍔',
-            'price' => 5,
-        ],
-        2 => [
-            'name' => 'Fries',
-            'emoji' => '🍟',
-            'price' => 2,
-        ],
-        3 => [
-            'name' => 'Drink',
-            'emoji' => '🥤',
-            'price' => 1,
-        ],
-        4 => [
-            'name' => 'Salad',
-            'emoji' => '🥗',
-            'price' => 3,
-        ],
-        5 => [
-            'name' => 'Pizza',
-            'emoji' => '🍕',
-            'price' => 4,
-        ],
-        6 => [
-            'name' => 'Sandwich',
-            'emoji' => '🥪',
-            'price' => 3,
-        ],
-        7 => [
-            'name' => 'Hot Dog',
-            'emoji' => '🌭',
-            'price' => 2,
-        ],
-        8 => [
-            'name' => 'Ice Cream',
-            'emoji' => '🍦',
-            'price' => 2,
-        ],
-        9 => [
-            'name' => 'Cake',
-            'emoji' => '🍰',
-            'price' => 3,
-        ],
-        10 => [
-            'name' => 'Donut',
-            'emoji' => '🍩',
-            'price' => 1,
-        ],
-        11 => [
-            'name' => 'Cupcake',
-            'emoji' => '🧁',
-            'price' => 1,
-        ],
-        12 => [
-            'name' => 'Cookie',
-            'emoji' => '🍪',
-            'price' => 1,
-        ],
-        13 => [
-            'name' => 'Sushi',
-            'emoji' => '🍣',
-            'price' => 4,
-        ],
-        14 => [
-            'name' => 'Noodles',
-            'emoji' => '🍜',
-            'price' => 3,
-        ],
-        15 => [
-            'name' => 'Steak',
-            'emoji' => '🥩',
-            'price' => 5,
-        ],
-    ];
-    }
-    
+function precios()
+{
+
+    return json_decode( 
+   '[
+        {
+            "id": 1,
+            "name": "Burger",
+            "emoji": "🍔",
+            "price": 4.99
+        },
+        {
+            "id": 2,
+            "name": "Fries",
+            "emoji": "🍟",
+            "price": 1.49
+        },
+        {
+            "id": 3,
+            "name": "Hotdog",
+            "emoji": "🌭",
+            "price": 3.49
+        },
+        {
+            "id": 4,
+            "name": "Tako",
+            "emoji": "🌮",
+            "price": 3.99
+        },
+        {
+            "id": 5,
+            "name": "Pizza",
+            "emoji": "🍕",
+            "price": 7.99
+        },
+        {
+            "id": 6,
+            "name": "Donut",
+            "emoji": "🍩",
+            "price": 1.49
+        },
+        {
+            "id": 7,
+            "name": "Popcorn",
+            "emoji": "🍿",
+            "price": 1.99
+        },
+        {
+            "id": 8,
+            "name": "Coke",
+            "emoji": "🥤",
+            "price": 1.49
+        },
+        {
+            "id": 9,
+            "name": "Cake",
+            "emoji": "🍰",
+            "price": 10.99
+        },
+        {
+            "id": 10,
+            "name": "Icecream",
+            "emoji": "🍦",
+            "price": 5.99
+        },
+        {
+            "id": 11,
+            "name": "Cookie",
+            "emoji": "🍪",
+            "price": 3.99
+        },
+        {
+            "id": 12,
+            "name": "Flan",
+            "emoji": "🍮",
+            "price": 7.99
+        }
+    ]');
+}
