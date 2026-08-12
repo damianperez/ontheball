@@ -244,7 +244,7 @@ function jsonResponseDurger( bool $ok, mixed $data = null, array $debug = [], in
     $total_price = 0;    
     foreach ($items_pedidos as $index => $item) {
         if (isset($item["id"])) {
-            $data['order_id'] .= $item["id"] . $item["count"] ?? 1 ;
+            $data['order_id'] .= str_pad( $item["id"] . $item["count"], 4, '0', STR_PAD_LEFT );
             $total_price += precios()[$item["id"]]["price"] * ($item["count"] ?? 1);
         }        
     }    
