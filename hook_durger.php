@@ -241,12 +241,15 @@ function jsonResponseDurger( bool $ok, mixed $data = null, array $debug = [], in
     //[{id: 1, count: 3}, {id: 2, count: 4}, {id: 8, count: 6}, {id: 9, count: 2}]
     $data['order_id']='';
     $items_pedidos = json_decode($data["order_data"], true) ?? [];
+    $total_price = 0;    
     foreach ($items_pedidos as $index => $item) {
         if (isset($item["id"])) {
             $data['order_id'] .= $item["id"] . $item["count"] ?? 1 ;
+            $total_price += precios()[$item["id"]]["price"] * ($item["count"] ?? 1);
         }        
     }    
     $order_text = parseOrder($data["order_data"]);
+    $order_text .= "\nTotal: $" . number_format($total_price, 2);
     //[{id: 1, count: 3}, {id: 2, count: 4}, {id: 8, count: 6}, {id: 9, count: 2}]
     echo json_encode(
         [
