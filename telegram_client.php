@@ -16,16 +16,23 @@ $BOT_API = getenv('BOT_API') ?: 'https://api.telegram.org/bot' . $BOT_TOKEN . '/
 
 class TelegramClient
 {
+    public $BOT_API;
+    
+    public function __construct($BOT_API=null) {
+        global $BOT_API;
+        if ($BOT_API === null) {
+            $BOT_API = getenv('BOT_API') ?: 'https://api.telegram.org/bot' . getenv('BOT_TOKEN') . '/';
+        }
+        $this->BOT_API = $BOT_API;
+    }
+    
     /**
      * Ejecutar método Bot API
      */
-    public static function call(
-        string $method,
-        array $params = []
-        ): array {
-
+    public static function call(string $method, array $params = [] ): array 
+        {
         $start = Logger::timerStart();
-
+        $BOT_API = getenv('BOT_API') ?: 'https://api.telegram.org/bot' . getenv('BOT_TOKEN') . '/';
         $url = $BOT_API . $method;
 
         Logger::info(
