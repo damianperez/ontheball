@@ -206,7 +206,7 @@ function ResponseDurger( bool $ok, mixed $data = null, array $debug = [], int $h
 {
     //Deberia validar el _auth
     $BOT_TOKEN = getenv('BOT_TOKEN') ?: '1618069377:AAGPFW-KGu-vCN0xUudrK6FRqWdD3AizrSc';
-    $auth = $update['_auth'];
+    $auth = $data['_auth'];
     if (Validate::isSafe($BOT_TOKEN, $auth)) {
         $datos = Validate::Data($BOT_TOKEN, $auth);  
         var_dump($datos);
