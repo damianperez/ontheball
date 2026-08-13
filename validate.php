@@ -19,12 +19,9 @@ class Validate
 
         return 0 === strcmp($hash, $checksum);
     }
-    public static function Data(string $botToken, string $initData): bool
-    {
-        [$checksum, $sortedInitData] = self::convertInitData($initData);
-        return $sortedInitData;
-    }
+    
 
+    
     /**
      * convert init data to `key=value` and sort it `alphabetically`.
      *
@@ -48,5 +45,24 @@ class Validate
         sort($initDataArray);
 
         return [$hash, implode("\n", $initDataArray)];
+    }
+     /**
+     * Extrae y decodifica los datos de inicio de Telegram Mini App.
+     *
+     * @param string $initData Cadena de texto recibida de Telegram.
+     * @return array Datos extraídos y formateados.
+     */
+    public static function extractTelegramData(string $initData): array {
+        $parsedData = [];
+        
+        // Parsear la cadena de consulta (query string)
+        parse_str($initData, $parsedData);
+
+        // Decodificar el JSON del usuario si está presente
+        if (!empty($parsedData['user'])) {
+            $parsedData['user'] = json_decode($parsedData['user'], true);
+        }
+
+        return $parsedData;
     }
 }

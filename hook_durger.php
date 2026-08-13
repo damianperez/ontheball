@@ -195,12 +195,18 @@ try {
     $debug[] =  "Tiempo " . $ms . " ms";
     //REspondo via Json
 
-    $auth = $update['_auth'];
-   // if (Validate::isSafe($BOT_TOKEN, $auth)) {
-        $datos = Validate::Data($BOT_TOKEN, $auth);  
-       
-        $debug[] = 'validated_data';
-        $debug[] = var_export($datos, true);
+    
+    $stringData = $update['_auth'];
+    $resultado = Validate::extractTelegramData($stringData);   
+    $debug[] = 'validated_data';
+    $debug[] = var_export($resultado, true);
+
+    if (!isset($resultado['user'])) {
+        throw new Exception("No se pudo extraer el usuario de los datos de inicio de Telegram.");
+    }
+    if (!isset($update['user_id'])) {
+        $update['user_id'] = $resultado['user']['id'];
+    }
     //} 
 
 
