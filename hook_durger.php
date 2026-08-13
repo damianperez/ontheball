@@ -190,7 +190,6 @@ try {
     $ms =Logger::timerEnd( $start   );
     $debug[] =  "Tiempo " . $ms . " ms";
     //REspondo via Json
-
     if (!isset($update['_auth'])) {
         throw new Exception("No se encontró la clave '_auth' en el update.");
     }
