@@ -10,6 +10,7 @@
  */
 declare(strict_types=1);
 require_once "config.php";
+require_once 'validate.php';
 $BOT_TOKEN = getenv('BOT_TOKEN') ?: '1618069377:AAGPFW-KGu-vCN0xUudrK6FRqWdD3AizrSc';
 $BOT_API = getenv('BOT_API') ?: 'https://api.telegram.org/bot' . $BOT_TOKEN . '/';
 $WEBAPP_URL = getenv('WEBAPP_URL') ?: 'https://bots.perezcompany.com.ar/ontheball/';
@@ -203,6 +204,13 @@ try {
 function ResponseDurger( bool $ok, mixed $data = null, array $debug = [], int $http = 200)
 {
     //Deberia validar el _auth
+    $auth = $update['_auth'];
+    if (Validate::isSafe($BOT_TOKEN, $auth)) {
+        $datos = Validate::Data($BOT_TOKEN, $auth);  
+        var_dump($datos);
+        $debug = array_merge($debug, ['validated_data' => $datos]);
+    }   
+    
 
    if (!is_array($data) || !isset($data["method"]) || !isset($data["mode"]) || !isset($data["_auth"])) {
         $ok = false;    
@@ -227,7 +235,7 @@ function ResponseDurger( bool $ok, mixed $data = null, array $debug = [], int $h
     } elseif ( $data["method"] === "sendMessage" && $data["mode"] === "pedidosnet" )
     {
         TelegramClient::sendMessage(
-                $chat_id,
+                $datos["chat_id"],
                 "Orden recibida correctamente, gracias por su compra!"
                 
             );
