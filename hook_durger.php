@@ -215,14 +215,6 @@ try {
 
 function ResponseDurger( bool $ok, mixed $data = null, array $debug = [], int $http = 200)
 {
-    //Deberia validar el _auth
-    $BOT_TOKEN = getenv('BOT_TOKEN') ?: '1618069377:AAGPFW-KGu-vCN0xUudrK6FRqWdD3AizrSc';
-    $auth = $data['_auth'];
-    if (Validate::isSafe($BOT_TOKEN, $auth)) {
-        $datos = Validate::Data($BOT_TOKEN, $auth);  
-        var_dump($datos);
-        $debug = array_merge($debug, ['validated_data' => $datos]);
-    }   
     
 
    if (!is_array($data) || !isset($data["method"]) || !isset($data["mode"]) || !isset($data["_auth"])) {
@@ -247,11 +239,13 @@ function ResponseDurger( bool $ok, mixed $data = null, array $debug = [], int $h
         jsonResponse( $ok, $data, $debug, $http);
     } elseif ( $data["method"] === "sendMessage" && $data["mode"] === "pedidosnet" )
     {
-        TelegramClient::sendMessage(
+        jsonResponse( $ok, $data, $debug, $http);
+    /*    TelegramClient::sendMessage(
                 $datos["chat_id"],
                 "Orden recibida correctamente, gracias por su compra!"
                 
             );
+    */
     } 
     
 }
@@ -387,79 +381,4 @@ function precios()
     ],
 ];
 
-    return json_decode( 
-   '[
-        {
-            "id": 1,
-            "name": "Burger",
-            "emoji": "🍔",
-            "price": 4.99
-        },
-        {
-            "id": 2,
-            "name": "Fries",
-            "emoji": "🍟",
-            "price": 1.49
-        },
-        {
-            "id": 3,
-            "name": "Hotdog",
-            "emoji": "🌭",
-            "price": 3.49
-        },
-        {
-            "id": 4,
-            "name": "Tako",
-            "emoji": "🌮",
-            "price": 3.99
-        },
-        {
-            "id": 5,
-            "name": "Pizza",
-            "emoji": "🍕",
-            "price": 7.99
-        },
-        {
-            "id": 6,
-            "name": "Donut",
-            "emoji": "🍩",
-            "price": 1.49
-        },
-        {
-            "id": 7,
-            "name": "Popcorn",
-            "emoji": "🍿",
-            "price": 1.99
-        },
-        {
-            "id": 8,
-            "name": "Coke",
-            "emoji": "🥤",
-            "price": 1.49
-        },
-        {
-            "id": 9,
-            "name": "Cake",
-            "emoji": "🍰",
-            "price": 10.99
-        },
-        {
-            "id": 10,
-            "name": "Icecream",
-            "emoji": "🍦",
-            "price": 5.99
-        },
-        {
-            "id": 11,
-            "name": "Cookie",
-            "emoji": "🍪",
-            "price": 3.99
-        },
-        {
-            "id": 12,
-            "name": "Flan",
-            "emoji": "🍮",
-            "price": 7.99
-        }
-    ]');
 }
