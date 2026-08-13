@@ -11,6 +11,9 @@
 declare(strict_types=1);
 require_once "config.php";
 require_once "logger.php";
+$BOT_TOKEN = getenv('BOT_TOKEN') ?: '1618069377:AAGPFW-KGu-vCN0xUudrK6FRqWdD3AizrSc';
+$BOT_API = getenv('BOT_API') ?: 'https://api.telegram.org/bot' . $BOT_TOKEN . '/';
+
 class TelegramClient
 {
     /**
@@ -19,7 +22,7 @@ class TelegramClient
     public static function call(
         string $method,
         array $params = []
-    ): array {
+        ): array {
 
         $start = Logger::timerStart();
 
@@ -97,7 +100,7 @@ class TelegramClient
         int|string $chat_id,
         string $text,
         array $extra=[]
-    ):array{
+        ):array{
 
         return self::call(
             "sendMessage",
