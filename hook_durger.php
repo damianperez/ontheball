@@ -134,11 +134,7 @@ try {
         $message = $update["message"];
         $chat_id = $message["chat"]["id"];
         $text = $message["text"] ?? "xxx";
-        Logger::info(
-            "Mensaje BOT",
-            $message,
-            BOT_LOG
-        );
+        Logger::info( "Mensaje BOT", $message,BOT_LOG     );
         /*
         |--------------------------------------------------------------------------
         | Comando START
@@ -195,7 +191,9 @@ try {
     $debug[] =  "Tiempo " . $ms . " ms";
     //REspondo via Json
 
-    
+    if (!isset($update['_auth'])) {
+        throw new Exception("No se encontró la clave '_auth' en el update.");
+    }
     $stringData = $update['_auth'];
     $resultado = Validate::extractTelegramData($stringData);   
     $debug[] = 'validated_data';
