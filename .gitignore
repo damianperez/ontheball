@@ -1,9 +1,6 @@
 vendor/
 .vscode/
 *.log
-/logs/
 logs/
 data/
-/data/
-data/estado.json
 #Config.php
