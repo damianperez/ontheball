@@ -246,12 +246,12 @@ function ResponseDurger( bool $ok, mixed $data = null, array $debug = [], int $h
     } elseif ( $data["method"] === "sendMessage" && $data["mode"] === "pedidosnet" )
     {
         jsonResponse( $ok, $data, $debug, $http);
-    /*    TelegramClient::sendMessage(
-                $datos["chat_id"],
+        TelegramClient::sendMessage(
+                $data["user_id"],
                 "Orden recibida correctamente, gracias por su compra!"
                 
             );
-    */
+    
     } 
     
 }
