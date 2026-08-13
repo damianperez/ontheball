@@ -11,20 +11,12 @@
 declare(strict_types=1);
 require_once "config.php";
 require_once "logger.php";
+
 $BOT_TOKEN = getenv('BOT_TOKEN') ?: '1618069377:AAGPFW-KGu-vCN0xUudrK6FRqWdD3AizrSc';
 $BOT_API = getenv('BOT_API') ?: 'https://api.telegram.org/bot' . $BOT_TOKEN . '/';
 
 class TelegramClient
 {
-    public $BOT_API;
-    
-    public function __construct($BOT_API=null) {
-        global $BOT_API;
-        if ($BOT_API === null) {
-            $BOT_API = getenv('BOT_API') ?: 'https://api.telegram.org/bot' . getenv('BOT_TOKEN') . '/';
-        }
-        $this->BOT_API = $BOT_API;
-    }
     
     /**
      * Ejecutar método Bot API
