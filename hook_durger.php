@@ -196,12 +196,12 @@ try {
     //REspondo via Json
 
     $auth = $update['_auth'];
-    if (Validate::isSafe($BOT_TOKEN, $auth)) {
+   // if (Validate::isSafe($BOT_TOKEN, $auth)) {
         $datos = Validate::Data($BOT_TOKEN, $auth);  
        
         $debug[] = 'validated_data';
         $debug[] = var_export($datos, true);
-    } 
+    //} 
 
 
 
