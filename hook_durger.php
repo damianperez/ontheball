@@ -61,38 +61,27 @@ try {
 */
     if (isset($update["message"]["web_app_data"])) {
         $raw = $update["message"]["web_app_data"]["data"];
-        $data = json_decode(
-            $raw,
-            true
-        );
-        if (!$data) {
-            $data = ["raw" => $raw];
-        }
+        $data = json_decode(            $raw,            true        );
+        if (!$data) {            $data = ["raw" => $raw];        }
         State::load();
-        State::event(
-            "SEND_DATA",
-            [
+        State::event(            "SEND_DATA",            [
                 "chat_id" =>        $update["message"]["chat"]["id"],
-                "payload" =>        $data
-            ]
-        );
+                "payload" =>        $data            ]        );
         State::save();
         Logger::json("SEND_DATA recibido",$data,BOT_LOG);
-    /*
-    Respuesta opcional al usuario
-    */
+        /*
+        Respuesta opcional al usuario
+        */
         TelegramClient::sendMessage(
             $update["message"]["chat"]["id"],
             'recibido: ' . var_export($data, true),
             [
                 "reply_markup" =>json_encode(
-                    [
-                        "inline_keyboard" => [[[    "text" => "✅ OK",    "callback_data" => "ok"]]]
-                    ]
+                    [ "inline_keyboard" => [[[    "text" => "✅ OK",    "callback_data" => "ok"]]]]
                 )
             ]
             //"✅ SendData recibido correctamente:".var_export($data, true)
-            /*
+        /*
                 Si viene 'Nativo, viene : 
                      array (
                         'time' => '2026-07-27T15:17:29.179Z',
@@ -124,6 +113,12 @@ try {
     |--------------------------------------------------------------------------
     | Procesar mensaje
     |--------------------------------------------------------------------------
+    de la mini app, el $update:
+    array (\n  'order_data' => '[{\"id\":2,\"count\":3}]',\n  
+    'comment' => 'ssss',\n  
+    'mode' => 'pedidosnet',\n  
+    'invoice' => 1,\n  
+    '_auth' => 'query_id=AAEHCIEnAAAAAAcIgScbXzAO&user=%7B%22id%22%3A662767623%2C%22first_name%22%3A%22Dami%C3%A1n%22%2C%22last_name%22%3A%22%22%2C%22username%22%3A%22PerezDamian%22%2C%22language_code%22%3A%22es%22%2C%22allows_write_to_pm%22%3Atrue%2C%22photo_url%22%3A%22https%3A%5C%2F%5C%2Ft.me%5C%2Fi%5C%2Fuserpic%5C%2F320%5C%2FP3a2zzEGYAcXB3ZanpskiS58EhW8UKFJLDuip6tS6H0.svg%22%7D&auth_date=1786575664&signature=iS_R1FqJdxtyECUBG9Ys_sLuTXUL7zLc7oi6llsYLnkKm-f4s5xqhrNIfmrJ2c98HXGajOTEXSJiTpsJbxuTDA&hash=df656ae8006d77352fc015960ef56e1aff2966a6d570752ba38cad426f84b244',\n  'method' => 'sendMessage',\n)",
     */
     if (isset($update["message"]["web_app_data"])) {
         $rawData = $update["message"]["web_app_data"]["data"];
@@ -207,7 +202,9 @@ try {
 
 function ResponseDurger( bool $ok, mixed $data = null, array $debug = [], int $http = 200)
 {
-    if (!is_array($data) || !isset($data["method"]) || !isset($data["mode"])) {
+    //Deberia validar el _auth
+
+   if (!is_array($data) || !isset($data["method"]) || !isset($data["mode"]) || !isset($data["_auth"])) {
         $ok = false;    
         http_response_code($http);
         header('Content-Type: application/json; charset=utf-8');
