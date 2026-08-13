@@ -10,7 +10,7 @@
  */
 declare(strict_types=1);
 require_once "config.php";
-require_once 'validate.php';
+
 $BOT_TOKEN = getenv('BOT_TOKEN') ?: '1618069377:AAGPFW-KGu-vCN0xUudrK6FRqWdD3AizrSc';
 $BOT_API = getenv('BOT_API') ?: 'https://api.telegram.org/bot' . $BOT_TOKEN . '/';
 $WEBAPP_URL = getenv('WEBAPP_URL') ?: 'https://bots.perezcompany.com.ar/ontheball/';
@@ -18,6 +18,7 @@ $WEBAPP_URL = getenv('WEBAPP_URL') ?: 'https://bots.perezcompany.com.ar/onthebal
 require_once "logger.php";
 require_once "state.php";
 require_once "telegram_client.php";
+require_once 'validate.php';
 $debug = [];
 try {
     $start = Logger::timerStart();
